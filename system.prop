@@ -35,7 +35,7 @@ persist.dpm.feature=1
 persist.dpm.nsrm.bkg.evt=3955
 
 # Dex2oat threads for faster app installation
-ro.sys.fw.dex2oat_thread_count=4
+ro.sys.fw.dex2oat_thread_count=6
 
 # Display
 debug.egl.hw=1
