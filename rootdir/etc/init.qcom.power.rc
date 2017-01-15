@@ -151,7 +151,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/sched_mostly_idle_freq 0
 
     # Enable adaptive LMK
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 81250
 
     chmod 0660 /sys/module/lowmemorykiller/parameters/minfree
