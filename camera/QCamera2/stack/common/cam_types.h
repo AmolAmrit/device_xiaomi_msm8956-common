@@ -1861,7 +1861,9 @@ typedef enum {
     CAM_INTF_PARM_INSTANT_AEC,
     /* Param for updating initial exposure index value*/
     CAM_INTF_PARM_INITIAL_EXPOSURE_INDEX,
-    CAM_INTF_PARM_MAX /* 194 */
+    CAM_INTF_PARM_MAX, /* 194 */
+    /* Whether HAL has run into DRAIN error */
+    CAM_INTF_META_DAEMON_RESTART
 } cam_intf_parm_type_t;
 
 typedef struct {
