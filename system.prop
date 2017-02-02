@@ -31,9 +31,6 @@ ro.btconfig.if=smd
 ro.btconfig.dev=/dev/smd3
 ro.btconfig.vendor=qcom
 ro.btconfig.chip=WCN3680
-vidc.debug.perf.mode=2
-camera.disable_zsl_mode=1
-vidc.enc.dcvs.extra-buff-count=2
 
 
 # CNE/DPM
