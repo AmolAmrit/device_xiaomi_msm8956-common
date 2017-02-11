@@ -1,0 +1,128 @@
+From d8ea4b1e88f5078fe0503f31e0296284565f56a8 Mon Sep 17 00:00:00 2001
+From: nicknitewolf <nickradiantwtf@gmail.com>
+Date: Thu, 29 Dec 2016 22:41:01 +0800
+Subject: [PATCH] kenzo: Initial Goodix FP
+
+---
+ sepolicy/file_contexts    | 22 ++++++++++++++++++++++
+ sepolicy/fingerprintd.te  |  7 +++++++
+ sepolicy/gx_fpd.te        | 38 ++++++++++++++++++++++++++++++++++++++
+ sepolicy/service_contexts |  1 +
+ sepolicy/shell.te         |  2 ++
+ sepolicy/sysinit.te       |  1 +
+ 6 files changed, 71 insertions(+)
+ create mode 100644 sepolicy/fingerprintd.te
+ create mode 100644 sepolicy/gx_fpd.te
+ create mode 100644 sepolicy/service_contexts
+ create mode 100644 sepolicy/shell.te
+ create mode 100644 sepolicy/sysinit.te
+
+diff --git a/sepolicy/file_contexts b/sepolicy/file_contexts
+index 4edd0c5..fd1f597 100644
+--- a/sepolicy/file_contexts
++++ b/sepolicy/file_contexts
+@@ -4,3 +4,25 @@
+ /sys/devices/soc.0/fpc_fpc1020.*/hw_reset                             u:object_r:fpc_sysfs:s0
+ /sys/devices/soc.0/fpc_fpc1020.*/irq                                  u:object_r:fpc_sysfs:s0
+ /sys/devices/soc.0/fpc_fpc1020.*/wakeup_enable                        u:object_r:fpc_sysfs:s0
++
++# Goodix Fingerprint
++/dev/gf66xx-spi                                                       u:object_r:gx_fpd_device:s0
++/dev/ttyACM[0-9]*                                                     u:object_r:gx_fpd_device:s0
++/dev/goodix_fp*                                                       u:object_r:gx_fpd_device:s0
++/system/bin/gx_fpd                                                    u:object_r:gx_fpd_exec:s0
++/data/system/fingerprint(/.*)?                                        u:object_r:gx_fpd_data_file:s0
++/data/goodix(/.*)?                                                    u:object_r:gx_fpd_data_file:s0
++/persist/data/gxfp(/.*)?                                              u:object_r:gx_fpd_data_file:s0
++/persist/data/gxfp                                                    u:object_r:gx_fpd_data_file:s0
++
++# Goodix Fingerprint libs
++/system/lib/libfpservice.so                                           u:object_r:gx_fpd_lib_file:s0
++/system/lib/libfpalgorithm.so                                         u:object_r:gx_fpd_lib_file:s0
++/system/lib/libfp_client.so                                           u:object_r:gx_fp_lib_file:s0
++/system/lib/libfphal.so                                               u:object_r:gx_fpd_lib_file:s0
++/system/lib/libfpnav.so                                               u:object_r:gx_fpd_lib_file:s0
++/system/lib64/libfpservice.s                                          u:object_r:gx_fpd_lib_file:s0
++/system/lib64/libfpalgorithm.so                                       u:object_r:gx_fpd_lib_file:s0
++/system/lib64/libfp_client.so                                         u:object_r:gx_fp_lib_file:s0
++/system/lib64/libfphal.so                                             u:object_r:gx_fpd_lib_file:s0
++/system/lib64/libfpnav.so                                             u:object_r:gx_fpd_lib_file:s0
+diff --git a/sepolicy/fingerprintd.te b/sepolicy/fingerprintd.te
+new file mode 100644
+index 0000000..6ae255c
+--- /dev/null
++++ b/sepolicy/fingerprintd.te
+@@ -0,0 +1,7 @@
++# Goodix fingerprint
++binder_call(fingerprintd, gx_fpd);
++allow fingerprintd gx_fpd_data_file:file { create unlink };
++allow fingerprintd gx_fpd_data_file:dir rw_file_perms;
++allow fingerprintd gx_fpd_lib_file:file rw_file_perms;
++allow fingerprintd gx_fp_lib_file:file rw_file_perms;
++allow fingerprintd gx_fpd_service:service_manager find;
+diff --git a/sepolicy/gx_fpd.te b/sepolicy/gx_fpd.te
+new file mode 100644
+index 0000000..4624608
+--- /dev/null
++++ b/sepolicy/gx_fpd.te
+@@ -0,0 +1,38 @@
++type gx_fpd, domain;
++type gx_fpd_device, dev_type;
++type gx_fpd_lib_file, file_type, data_file_type;
++type gx_fp_lib_file, file_type, data_file_type;
++type gx_fpd_data_file, file_type, data_file_type;
++type gx_fpd_service, app_api_service, system_server_service, service_manager_type;
++type gx_fpd_exec, exec_type, file_type;
++
++allow appdomain gx_fpd_lib_file:file rw_file_perms;
++allow appdomain gx_fp_lib_file:file rw_file_perms;
++allow appdomain gx_fpd_data_file:file rw_file_perms;
++
++allow binderservicedomain gx_fpd_data_file:file { create open getattr write };
++allow binderservicedomain fingerprintd_data_file:file { create open getattr write };
++
++set_prop(gx_fpd, system_prop)
++set_prop(gx_fpd, config_prop)
++
++init_daemon_domain(gx_fpd)
++binder_use(gx_fpd)
++binder_call(gx_fpd, binderservicedomain)
++binder_call(gx_fpd, appdomain)
++binder_call(gx_fpd, system_server);
++binder_service(gx_fpd)
++
++use_keystore(gx_fpd)
++allow gx_fpd_exec keystore:keystore_key { add_auth };
++
++allow gx_fpd gx_fpd_device:chr_file { ioctl read write open };
++allow gx_fpd gx_fpd_service:service_manager add;
++allow gx_fpd ion_device:chr_file { read ioctl open };
++allow gx_fpd self:capability dac_override;
++allow gx_fpd shell_exec:file rx_file_perms;
++allow gx_fpd system_file:file execute_no_trans;
++allow gx_fpd tee_device:chr_file { ioctl read write open };
++
++allow tee gx_fpd_data_file:dir { add_name open read remove_name write search };
++allow tee gx_fpd_data_file:file { create open read unlink write };
+diff --git a/sepolicy/service_contexts b/sepolicy/service_contexts
+new file mode 100644
+index 0000000..5918c15
+--- /dev/null
++++ b/sepolicy/service_contexts
+@@ -0,0 +1 @@
++goodix.fp                                 u:object_r:gx_fpd_service:s0
+diff --git a/sepolicy/shell.te b/sepolicy/shell.te
+new file mode 100644
+index 0000000..004b050
+--- /dev/null
++++ b/sepolicy/shell.te
+@@ -0,0 +1,2 @@
++allow shell ctl_default_prop:property_service set;
++allow shell gx_fpd_exec:file getattr;
+diff --git a/sepolicy/sysinit.te b/sepolicy/sysinit.te
+new file mode 100644
+index 0000000..f37e7d5
+--- /dev/null
++++ b/sepolicy/sysinit.te
+@@ -0,0 +1 @@
++allow sysinit ctl_default_prop:property_service set;
