@@ -135,6 +135,11 @@ typedef struct {
 
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
+#ifdef VANILLA_HAL
+#define CAMERA_CMD_LONGSHOT_ON      23
+#define CAMERA_CMD_LONGSHOT_OFF     24
+#endif
+
 extern volatile uint32_t gCamHalLogLevel;
 
 typedef enum {

@@ -5305,6 +5305,83 @@ int QCamera2HardwareInterface::sendCommand(int32_t command,
         CDBG_HIGH("%s: Histogram -> %s", __func__,
               mParameters.isHistogramEnabled() ? "Enabled" : "Disabled");
         break;
+#else
+    case CAMERA_CMD_LONGSHOT_ON:
+        arg1 = arg2 = 0;
+        // Longshot can only be enabled when image capture
+        // is not active.
+        if ( !m_stateMachine.isCaptureRunning() && m_stateMachine.isPreviewRunning() ) {
+            if (!mLongshotEnabled) {
+                CDBG_HIGH("%s: Longshot Enabled", __func__);
+                mLongshotEnabled = true;
+                pthread_mutex_lock(&m_parm_lock);
+                rc = mParameters.setLongshotEnable(mLongshotEnabled);
+                pthread_mutex_unlock(&m_parm_lock);
+
+                // Due to recent buffer count optimizations
+                // ZSL might run with considerably less buffers
+                // when not in longshot mode. Preview needs to
+                // restart in this case.
+                if (isZSLMode()) {
+                    QCameraChannel *pChannel = NULL;
+                    QCameraStream *pSnapStream = NULL;
+                    pChannel = m_channels[QCAMERA_CH_TYPE_ZSL];
+                    if (NULL != pChannel) {
+                        QCameraStream *pStream = NULL;
+                        for (uint32_t i = 0; i < pChannel->getNumOfStreams(); i++) {
+                            pStream = pChannel->getStreamByIndex(i);
+                            if (pStream != NULL) {
+                                if (pStream->isTypeOf(CAM_STREAM_TYPE_SNAPSHOT)) {
+                                    pSnapStream = pStream;
+                                    break;
+                                }
+                            }
+                        }
+                        if (NULL != pSnapStream) {
+                            uint8_t required = 0;
+                            required = getBufNumRequired(CAM_STREAM_TYPE_SNAPSHOT);
+                            if (pSnapStream->getBufferCount() < required) {
+                                // We restart here, to reset the FPS and no
+                                // of buffers as per the requirement of longshot usecase.
+                                arg1 = QCAMERA_SM_EVT_RESTART_PERVIEW;
+                                if (getRelatedCamSyncInfo()->sync_control ==
+                                        CAM_SYNC_RELATED_SENSORS_ON) {
+                                    arg2 = QCAMERA_SM_EVT_DELAYED_RESTART;
+                                }
+                            }
+                        }
+                    }
+                }
+                //
+                mPrepSnapRun = false;
+                mCACDoneReceived = FALSE;
+            }
+        } else {
+            rc = NO_INIT;
+        }
+        break;
+    case CAMERA_CMD_LONGSHOT_OFF:
+        arg1 = arg2 = 0;
+        if ( mLongshotEnabled ) {
+            if ( m_stateMachine.isCaptureRunning() ) {
+                cancelPicture();
+                processEvt(QCAMERA_SM_EVT_SNAPSHOT_DONE, NULL);
+                QCameraChannel *pZSLChannel = m_channels[QCAMERA_CH_TYPE_ZSL];
+                if (isZSLMode() && (NULL != pZSLChannel) && mPrepSnapRun) {
+                    mCameraHandle->ops->stop_zsl_snapshot(
+                        mCameraHandle->camera_handle,
+                        pZSLChannel->getMyHandle());
+                }
+            }
+            mPrepSnapRun = false;
+            CDBG_HIGH("%s: Longshot Disabled", __func__);
+            mLongshotEnabled = false;
+            pthread_mutex_lock(&m_parm_lock);
+            rc = mParameters.setLongshotEnable(mLongshotEnabled);
+            pthread_mutex_unlock(&m_parm_lock);
+            mCACDoneReceived = FALSE;
+        }
+        break;
 #endif
     case CAMERA_CMD_START_FACE_DETECTION:
     case CAMERA_CMD_STOP_FACE_DETECTION:
@@ -8366,12 +8443,33 @@ int QCamera2HardwareInterface::updateThermalLevel(void *thermal_level)
  *==========================================================================*/
 int QCamera2HardwareInterface::updateParameters(const char *parms, bool &needRestart)
 {
-    int rc = NO_ERROR;
+    int final_rc = NO_ERROR;
+    int rc;
 
-    pthread_mutex_lock(&m_parm_lock);
     String8 str = String8(parms);
     QCameraParameters param(str);
-    rc =  mParameters.updateParameters(param, needRestart);
+
+#ifdef VANILLA_HAL
+    const char *longshot = param.get(QCameraParameters::KEY_QC_LONG_SHOT);
+    int32_t arg1 = 0, arg2 = 0;
+    if (longshot != NULL) {
+        if (!strcmp(longshot, QCameraParameters::VALUE_ON))
+            rc = sendCommand(CAMERA_CMD_LONGSHOT_ON, arg1, arg2);
+        else
+            rc = sendCommand(CAMERA_CMD_LONGSHOT_OFF, arg1, arg2);
+        if (rc == NO_ERROR) {
+            if (arg1 == QCAMERA_SM_EVT_RESTART_PERVIEW)
+                needRestart = true;
+        } else {
+            param.remove(QCameraParameters::KEY_QC_LONG_SHOT);
+            final_rc = rc;
+        }
+    }
+#endif
+
+    pthread_mutex_lock(&m_parm_lock);
+    if ((rc = mParameters.updateParameters(param, needRestart)))
+        final_rc = rc;
 
     // update stream based parameter settings
     for (int i = 0; i < QCAMERA_CH_TYPE_MAX; i++) {
@@ -8381,7 +8479,7 @@ int QCamera2HardwareInterface::updateParameters(const char *parms, bool &needRes
     }
     pthread_mutex_unlock(&m_parm_lock);
 
-    return rc;
+    return final_rc;
 }
 
 /*===========================================================================
