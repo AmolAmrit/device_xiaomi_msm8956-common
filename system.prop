@@ -34,6 +34,7 @@ persist.bt.enableAptXHD=true
 # Camera
 media.camera.ts.monotonic=1
 persist.camera.HAL3.enabled=1
+camera.lowpower.record.enable=1
 
 # CNE/DPM
 persist.cne.feature=1
@@ -115,6 +116,7 @@ persist.radio.rat_on=combine
 persist.radio.sib16_support=1
 persist.radio.sw_mbn_update=0
 persist.radio.VT_HYBRID_ENABLE=1
+persist.radio.add_power_save=1
 
 # TCP
 net.tcp.2g_init_rwnd=10
