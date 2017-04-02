@@ -1,2 +1,6 @@
 type proc_touchpanel, fs_type;
 type decrypt_file, file_type, data_file_type;
+
+# DT2W
+type sysfs_dt2w, sysfs_type, fs_type;
+
