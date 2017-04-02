@@ -1,1 +1,4 @@
 type proc_touchpanel, fs_type;
+
+# DT2W
+type sysfs_dt2w, sysfs_type, fs_type;

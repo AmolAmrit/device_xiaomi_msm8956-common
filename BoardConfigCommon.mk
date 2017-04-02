@@ -226,3 +226,6 @@ WIFI_DRIVER_FW_PATH_STA     := "sta"
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/msm8956-common/BoardConfigVendor.mk
+
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"

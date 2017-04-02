@@ -151,6 +151,11 @@ on boot
     chown system system /sys/class/leds/green/led_time
     chown system system /sys/class/leds/blue/led_time
 
+    # DT2W
+    chmod 0666 /sys/android_touch/doubletap2wake
+    chown system system /sys/android_touch/doubletap2wake
+
+
 on post-fs
     start qseecomd
 
