@@ -126,6 +126,9 @@ persist.radio.sw_mbn_update=0
 persist.radio.VT_HYBRID_ENABLE=1
 persist.radio.add_power_save=1
 
+# Storage
+ro.sys.sdcardfs=true
+
 # TCP
 net.tcp.2g_init_rwnd=10
 
