@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2016, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2016, The Linux Foundataion. All rights reserved
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are
@@ -34,9 +34,10 @@
 #include <utils/List.h>
 #include <utils/KeyedVector.h>
 #include <hardware/camera3.h>
-#include <camera/CameraMetadata.h>
 #include "QCameraTrace.h"
 #include "QCamera3HALHeader.h"
+#include "CameraMetadata.h"
+
 #include "QCamera3Channel.h"
 #include "QCamera3CropRegionMapper.h"
 
@@ -59,6 +60,8 @@ extern "C" {
 using namespace android;
 
 namespace qcamera {
+
+using ::android::hardware::camera::common::V1_0::helper::CameraMetadata;
 
 #ifndef TRUE
 #define TRUE 1
