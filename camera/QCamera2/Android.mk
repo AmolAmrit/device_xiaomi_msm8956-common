@@ -26,6 +26,7 @@ LOCAL_SRC_FILES += \
 
 #HAL 1.0 source
 LOCAL_SRC_FILES += \
+        HAL/CameraParameters.cpp \
         HAL/QCamera2HWI.cpp \
         HAL/QCameraMuxer.cpp \
         HAL/QCameraMem.cpp \
@@ -92,12 +93,14 @@ LOCAL_C_INCLUDES += \
         $(TARGET_OUT_HEADERS)/qcom/display
 LOCAL_C_INCLUDES += \
         hardware/qcom/display-caf/msm8952/libqservice
-LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl
-LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
+LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libui
+LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder libgui
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
+
+LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
 LOCAL_CLANG := false
 
