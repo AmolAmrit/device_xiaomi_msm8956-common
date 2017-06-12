@@ -30,13 +30,14 @@
 #ifndef __QCAMERA3HARDWAREINTERFACE_H__
 #define __QCAMERA3HARDWAREINTERFACE_H__
 
+// System dependencies
+#include <CameraMetadata.h>
 #include <pthread.h>
 #include <utils/List.h>
 #include <utils/KeyedVector.h>
 #include <hardware/camera3.h>
 #include "QCameraTrace.h"
 #include "QCamera3HALHeader.h"
-#include "CameraMetadata.h"
 
 #include "QCamera3Channel.h"
 #include "QCamera3CropRegionMapper.h"
@@ -57,11 +58,10 @@ extern "C" {
 #endif //#ifdef CDBG_HIGH
 #define CDBG_HIGH(fmt, args...) ALOGD_IF(gCamHal3LogLevel >= 1, fmt, ##args)
 
+using ::android::hardware::camera::common::V1_0::helper::CameraMetadata;
 using namespace android;
 
 namespace qcamera {
-
-using ::android::hardware::camera::common::V1_0::helper::CameraMetadata;
 
 #ifndef TRUE
 #define TRUE 1
