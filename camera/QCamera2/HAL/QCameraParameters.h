@@ -22,18 +22,21 @@
 #include <cutils/properties.h>
 #include <hardware/camera.h>
 #include <stdlib.h>
+
+// System dependencies
+#include <CameraParameters.h>
 #include <utils/Errors.h>
 #include "cam_intf.h"
 #include "cam_types.h"
 #include "QCameraMem.h"
 #include "QCameraThermalAdapter.h"
 
-#include "CameraParameters.h"
-
 extern "C" {
 #include <mm_jpeg_interface.h>
 }
 
+using ::android::hardware::camera::common::V1_0::helper::CameraParameters;
+using ::android::hardware::camera::common::V1_0::helper::Size;
 using namespace android;
 
 namespace qcamera {
