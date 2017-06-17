@@ -1,3 +1,9 @@
 allow priv_app device:dir r_dir_perms;
 allow priv_app fuseblk:dir search;
 allow priv_app fuseblk:file r_file_perms;
+
+allow priv_app vfat:dir rw_dir_perms;
+allow priv_app vfat:dir create;
+allow priv_app vfat:dir { setattr rmdir };
+allow priv_app vfat:file rw_file_perms;
+allow priv_app vfat:file { create getattr unlink };
