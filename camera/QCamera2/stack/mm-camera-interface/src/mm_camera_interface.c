@@ -39,6 +39,7 @@
 #include <media/msm_cam_sensor.h>
 #include <cutils/properties.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "mm_camera_dbg.h"
 #include "mm_camera_interface.h"
