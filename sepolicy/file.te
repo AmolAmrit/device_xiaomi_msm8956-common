@@ -1,4 +1,5 @@
 type proc_touchpanel, fs_type;
+type dsp_file, fs_type, contextmount_type;
 
 # DT2W
 type sysfs_dt2w, sysfs_type, fs_type;
