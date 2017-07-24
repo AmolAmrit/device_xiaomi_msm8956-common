@@ -157,12 +157,6 @@ on charger
     rm /data/system/perfd/default_values
     start perfd
 
-    # Set perfd properties
-    setprop sys.post_boot.parsed 1
-
-    # Start IO prefetcher service
-    start iop
-
 on class_start:late_start
     trigger enable-low-power
 
@@ -178,12 +172,4 @@ service perfd /system/vendor/bin/perfd
     group root readproc
     disabled
     socket perfd seqpacket 0666 root system
-    writepid /dev/cpuset/system-background/tasks
-
-service iop /system/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
