@@ -123,3 +123,8 @@ persist.timed.enable=true
 
 # WiFi
 wifi.interface=wlan0
+
+
+# Higher fling velocities for smooth scrolling and to provide better responsiveness - From HalogenOS Team
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
