@@ -30,6 +30,7 @@ ro.btconfig.if=smd
 ro.btconfig.dev=/dev/smd3
 ro.btconfig.vendor=qcom
 ro.btconfig.chip=WCN3680
+persist.bt.enableAptXHD=true
 
 # Camera
 media.camera.ts.monotonic=1
