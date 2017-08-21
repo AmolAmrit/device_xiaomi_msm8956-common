@@ -285,6 +285,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
 
+# QPerformance
+PRODUCT_BOOT_JARS += QPerformance
+
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
     libtinyxml \
