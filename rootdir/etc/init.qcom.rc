@@ -75,7 +75,9 @@ on early-boot
     chmod 0664 /sys/class/graphics/fb0/mdp/bw_mode_bitmap
 
 on fs
-    wait /dev/block/bootdevice
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
+
     mount_all fstab.qcom
     write /proc/sys/vm/swappiness 100
     mkdir /persist/data 0700 system system
