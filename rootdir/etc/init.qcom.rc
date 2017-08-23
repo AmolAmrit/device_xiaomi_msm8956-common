@@ -623,13 +623,6 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service fingerprintd /system/bin/fingerprintd
-    class late_start
-    user system
-    group drmrpc input system
-    socket fpce stream 0660 system system
-    writepid /dev/cpuset/system-background/tasks
-
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
     user system
