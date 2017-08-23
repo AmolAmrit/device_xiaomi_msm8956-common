@@ -277,6 +277,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensors.msm8952
 
+# Seccomp policy
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy
+
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
