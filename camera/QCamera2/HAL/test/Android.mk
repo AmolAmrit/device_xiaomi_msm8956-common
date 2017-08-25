@@ -49,7 +49,6 @@ LOCAL_VENDOR_MODULE := true
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 LOCAL_CFLAGS += -O0
-LOCAL_CLANG := false
 
 ifeq (1,$(filter 1,$(shell echo "$$(( $(PLATFORM_SDK_VERSION) >= 20 ))" )))
 
