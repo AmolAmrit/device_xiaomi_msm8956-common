@@ -312,6 +312,10 @@ bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
+# Protobuf
+vendor/lib/libprotobuf-cpp-shit.so
+vendor/lib64/libprotobuf-cpp-shit.so
+
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
