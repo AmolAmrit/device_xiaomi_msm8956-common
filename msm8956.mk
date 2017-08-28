@@ -147,8 +147,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # Face detection extension
 PRODUCT_PACKAGES += \
