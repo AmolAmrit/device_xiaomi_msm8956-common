@@ -338,6 +338,7 @@ on property:persist.env.fastdorm.enabled=true
 
 service cnd /system/bin/cnd
     class main
+    setenv LD_LIBRARY_PATH /system/vendor/lib64/legacy
     socket cnd stream 660 root inet
     writepid /dev/cpuset/system-background/tasks
 
