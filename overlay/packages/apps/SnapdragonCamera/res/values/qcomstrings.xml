@@ -13,7 +13,7 @@
 -->
 <resources>
     <!-- Zero shutter lag-->
-    <string name="pref_camera_zsl_default" translatable="false">off</string>
+    <string name="pref_camera_zsl_default" translatable="false">on</string>
 
     <!-- Sharpness -->
     <string name="pref_camera_sharpness_default" translatable="false">1</string>
