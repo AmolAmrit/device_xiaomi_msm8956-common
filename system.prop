@@ -21,6 +21,7 @@ vendor.voice.path.for.pcm.voip=true
 vendor.voice.conc.fallbackpath=deep-buffer
 vendor.voice.playback.conc.disabled=true
 vendor.voice.record.conc.disabled=false
+ro.af.client_heap_size_kbyte=7168
 
 # Bluetooth
 bluetooth.hfp.client=1
