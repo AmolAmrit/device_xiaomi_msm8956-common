@@ -10,7 +10,7 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
     liblog \
-    libsenso
+    libsensor
 
 LOCAL_SRC_FILES += \
     loc_log.cpp \
