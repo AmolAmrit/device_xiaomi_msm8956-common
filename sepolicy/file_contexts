@@ -9,6 +9,7 @@
 
 # IR Blaster
 /dev/lirc[0-9]*                                                       u:object_r:lirc_device:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service-custom       u:object_r:hal_ir_default_exec:s0
 
 # DT2W
 /sys/android_touch/doubletap2wake                                     u:object_r:sysfs_dt2w:s0
