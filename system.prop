@@ -35,7 +35,7 @@ persist.bt.enableAptXHD=true
 # Camera
 media.camera.ts.monotonic=1
 persist.camera.HAL3.enabled=1
-
+persist.capture.burst.exposures=-5,0,5
 
 # CNE/DPM
 persist.cne.feature=1
