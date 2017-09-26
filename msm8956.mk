@@ -198,9 +198,14 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
-# HIDL
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
+# GNSS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 
 # IPA Manager
 #PRODUCT_PACKAGES += \
