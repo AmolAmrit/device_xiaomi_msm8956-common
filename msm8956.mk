@@ -200,10 +200,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-service \
     android.hardware.health@1.0
 
-# HIDL
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
-
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
