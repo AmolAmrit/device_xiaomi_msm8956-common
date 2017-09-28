@@ -314,7 +314,6 @@ vendor/lib/libperipheral_client.so
 
 # Protobuf
 vendor/lib/libprotobuf-cpp-shit.so
-vendor/lib64/legacy/libprotobuf-cpp-full.so
 vendor/lib64/libprotobuf-cpp-shit.so
 
 # Postprocessing
