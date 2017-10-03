@@ -24,7 +24,9 @@ LOCAL_SRC_FILES += \
     LocThread.cpp \
     MsgTask.cpp \
     loc_misc_utils.cpp \
-    sensor.cpp
+    sensor.cpp \
+    process_name.c
+
 
 # Flag -std=c++11 is not accepted by compiler when LOCAL_CLANG is set to true
 LOCAL_CFLAGS += \
