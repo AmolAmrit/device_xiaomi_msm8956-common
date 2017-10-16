@@ -17,4 +17,8 @@
 
     <!-- Sharpness -->
     <string name="pref_camera_sharpness_default" translatable="false">1</string>
+    
+    <!-- Selfie Mirror-->
+    <string name="pref_camera_selfiemirror_default" translatable="false">Enable</string>
+
 </resources>
