@@ -209,8 +209,12 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
-# Healthd
+# Health HAL
 PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-convert \
+    android.hardware.health@1.0-service \
+    android.hardware.health@1.0 \
     chargeonlymode
 
 # HIDL
