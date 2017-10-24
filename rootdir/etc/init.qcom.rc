@@ -243,6 +243,9 @@ on boot
     chmod 0666 /sys/android_touch/doubletap2wake
     chown system system /sys/android_touch/doubletap2wake
 
+    # Arch Power 
+    write /sys/kernel/sched/arch_power 1
+
 on post-fs
     start qseecomd
 
