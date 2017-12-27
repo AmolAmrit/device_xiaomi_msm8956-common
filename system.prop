@@ -67,7 +67,7 @@ persist.data.mode=concurrent
 persist.data.iwlan.enable=true
 
 # FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/config
+ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 
 # GPS
 persist.gps.qc_nlp_in_use=1
