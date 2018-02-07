@@ -200,6 +200,10 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
+# Healthd
+PRODUCT_PACKAGES += \
+    chargeonlymode
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
