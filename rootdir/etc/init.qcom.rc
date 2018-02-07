@@ -488,7 +488,7 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     group radio cache inet misc audio log readproc wakelock
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service charger /charger
+service charger /sbin/chargeonlymode
     class charger
     group system graphics
     seclabel u:r:charger:s0
@@ -575,6 +575,7 @@ on property:init.svc.zygote=restarting
 
 on charger
     start hvdcp_opti
+    start thermal-engine
 
 service adsprpcd /system/bin/adsprpcd
     class main
