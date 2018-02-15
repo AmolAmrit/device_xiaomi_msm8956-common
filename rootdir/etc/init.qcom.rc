@@ -181,7 +181,9 @@ on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/misc/camera 0770 camera camera
 
-    mkdir /data/misc/ipa 0700 net_admin net_admin
+    #create ipacm log dir
+    mkdir /data/vendor/ipa 0770 radio radio
+    chmod 0770 /data/vendor/ipa
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
@@ -421,17 +423,10 @@ service netmgrd /system/bin/netmgrd
     class main
     writepid /dev/cpuset/system-background/tasks
 
-service ipacm-diag /system/bin/ipacm-diag
+service ipacm /system/vendor/bin/ipacm
     class main
-    user system
-    socket ipacm_log_file dgram 660 system net_admin
-    group net_admin diag
-    writepid /dev/cpuset/system-background/tasks
-
-service ipacm /system/bin/ipacm
-    class main
-    user net_admin
-    group net_admin inet
+    user radio
+    group radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service qti /system/vendor/bin/qti

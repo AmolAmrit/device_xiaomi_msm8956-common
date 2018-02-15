@@ -230,9 +230,6 @@ vendor/lib/libscale.so
 etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
 
-# IPA
-bin/ipacm-diag
-
 # Keystore
 vendor/lib64/hw/keystore.msm8952.so
 
