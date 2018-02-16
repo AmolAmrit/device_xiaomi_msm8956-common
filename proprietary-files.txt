@@ -29,7 +29,7 @@ vendor/lib64/libacdbmapper.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
-vendor/lib64/libaudioalsa.so
+-vendor/lib64/libaudioalsa.so
 vendor/lib64/libhwdaphal.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -41,7 +41,7 @@ vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
 vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
 vendor/lib/libaptXScheduler.so
 vendor/lib/libaudcal.so
-vendor/lib/libaudioalsa.so
+-vendor/lib/libaudioalsa.so
 vendor/lib/libhwdaphal.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
