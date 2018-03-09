@@ -119,11 +119,3 @@ if [ -f /system/etc/mbn_ota.txt ] && [ ! -f /data/misc/radio/modem_config/mbn_ot
     chown radio.radio /data/misc/radio/modem_config/mbn_ota.txt
 fi
 echo 1 > /data/misc/radio/copy_complete
-
-# Zram disk - 512MB size
-zram_enable=`getprop ro.config.zram`
-if [ "$zram_enable" == "true" ]; then
-    echo 536870912 > /sys/block/zram0/disksize
-    mkswap /dev/block/zram0
-    swapon /dev/block/zram0 -p 32758
-fi

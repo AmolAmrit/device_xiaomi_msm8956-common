@@ -125,5 +125,4 @@ persist.timed.enable=true
 # WiFi
 wifi.interface=wlan0
 
-#Zram disk
-ro.config.zram=true
+
