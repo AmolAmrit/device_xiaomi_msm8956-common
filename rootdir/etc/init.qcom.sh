@@ -72,6 +72,39 @@ start_copying_prebuilt_qcril_db()
     fi
 }
 
+configure_memory_parameters()
+{
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    # Read adj series and set adj threshold for PPR and ALMK.
+    # This is required since adj values change from framework to framework.
+    adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
+    adj_1="${adj_series#*,}"
+    set_almk_ppr_adj="${adj_1%%,*}"
+
+    # PPR and ALMK should not act on HOME adj and below.
+    # Normalized ADJ for HOME is 6. Hence multiply by 6
+    # ADJ score represented as INT in LMK params, actual score can be in decimal
+    # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
+    set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
+    echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
+    echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
+
+    #Set Low memory killer minfree parameters
+    # 64 bit up to 2GB with use 14K, and above 2GB will use 18K
+    #
+    # Set ALMK parameters (usually above the highest minfree values)
+    # 64 bit will have 81K
+    chmod 0660 /sys/module/lowmemorykiller/parameters/minfree
+
+    if [ $MemTotal -gt 2097152 ]; then
+        echo "18432,23040,27648,32256,55296,80640" > /sys/module/lowmemorykiller/parameters/minfree
+    else
+        echo "14746,18432,22118,25805,40000,55000" > /sys/module/lowmemorykiller/parameters/minfree
+    fi
+}
+
 baseband=`getprop ro.baseband`
 echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
@@ -119,3 +152,8 @@ if [ -f /system/etc/mbn_ota.txt ] && [ ! -f /data/misc/radio/modem_config/mbn_ot
     chown radio.radio /data/misc/radio/modem_config/mbn_ota.txt
 fi
 echo 1 > /data/misc/radio/copy_complete
+
+#
+# Set LMK Configurations dynamically based on memory size
+#
+configure_memory_parameters
