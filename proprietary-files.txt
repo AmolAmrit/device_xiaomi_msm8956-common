@@ -66,6 +66,18 @@ etc/firmware/rampatch_tlv_2.1.tlv
 etc/firmware/rampatch_tlv_3.0.tlv
 etc/firmware/rampatch_tlv_3.2.tlv
 
+# Camera
+vendor/lib/libchromaflash.so 
+vendor/lib/libllvd_smore.so 
+vendor/lib/libllvd_sw_tnr.so 
+vendor/lib/libmmcamera_isp_abcc44.so 
+vendor/lib/libmmcamera_llvd.so 
+vendor/lib/libmmcamera_sw_tnr.so 
+vendor/lib/liboptizoom.so
+vendor/lib/libseemore.so
+vendor/lib/libtrueportrait.so 
+vendor/lib/libubifocus.so 
+
 # Charger
 bin/hvdcp_opti
 
