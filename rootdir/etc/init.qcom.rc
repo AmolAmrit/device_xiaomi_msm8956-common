@@ -175,9 +175,6 @@ on boot
     # Arch Power 
     write /sys/kernel/sched/arch_power 1
 
-    # State Notifier
-    write /sys/module/state_notifier/parameters/enabled Y 
-
 on post-fs
     start qseecomd
 
