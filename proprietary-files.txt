@@ -311,21 +311,21 @@ vendor/lib/libQtiTether.so
 vendor/lib/libconnctrl.so
 
 # Perf
-bin/msm_irqbalance
-framework/QPerformance.jar
-vendor/bin/perfd
-vendor/etc/public.libraries.txt
-vendor/etc/perf-profile0.conf
-vendor/etc/perf-profile1.conf
-vendor/etc/perf-profile2.conf
-vendor/etc/perf-profile3.conf
-vendor/etc/perf-profile4.conf
-vendor/etc/perf-profile5.conf
-vendor/etc/perf-profile6.conf
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti_performance.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti_performance.so
+bin/msm_irqbalance|35baa5dff915dbb28f045a58f7be48f1b6fdcd4b 
+-framework/QPerformance.jar|24538508662ecdaa9e3e5d94e3c25451753091bb 
+vendor/bin/perfd|f223d9f876bc9e57c20ab805b78f3b66ecbc1ce0
+vendor/etc/public.libraries.txt|3abb66a9286d3cc90130206602b594cd06d07beb
+vendor/etc/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf-profile1.conf|58c8333b58183fe2412061e5ff22c218b7da305c
+vendor/etc/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
+vendor/etc/perf-profile3.conf|3a1edfaeaf087effcadba7c652737ab6dd2d87b5
+vendor/etc/perf-profile4.conf|0bc4779472306b1b225e9fc9be40af54e14e2266
+vendor/etc/perf-profile5.conf|5bc85ed4a0f3cedd57e1e046416f423a83dc4f63
+vendor/etc/perf-profile6.conf|16e84cbd39c7fd0346647c41e32bf2c65220babd 
+-vendor/lib64/libqti-perfd-client.so|7cd9cdb01d282e5cbc6623db82dfe3f104545f86 
+-vendor/lib64/libqti_performance.so|d0707d9843d779a4d773bf0529b26fd095ee6e44 
+-vendor/lib/libqti-perfd-client.so|a67ee781bf77eb1c7f0f1fb6a00ac68d4f1280d6
+-vendor/lib/libqti_performance.so|bd683808b1f09a3987d43ae8f62defd10f55d10e
 
 # Peripheral manager
 bin/pm-proxy
