@@ -181,7 +181,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+TARGET_HAS_NO_WIFI_STATS := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
@@ -203,9 +203,6 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
-
-# Sensors
-USE_SENSOR_MULTI_HAL := true
 
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
