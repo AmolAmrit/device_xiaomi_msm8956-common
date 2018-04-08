@@ -503,4 +503,8 @@
    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
 
+
+   <!-- Whether home button can wake device -->
+   <bool name="config_homeCanWake">true</bool>
+
 </resources>
