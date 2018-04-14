@@ -19,7 +19,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-  <!-- Whether cpu boost is enabled right after boot -->
+  <!-- Whether device supports wirelss FM -->
   <bool name="config_enableWirelessFM">true</bool>
  
 </resources>
