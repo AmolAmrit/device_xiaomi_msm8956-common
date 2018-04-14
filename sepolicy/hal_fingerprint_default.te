@@ -7,6 +7,7 @@ allow hal_fingerprint_default fpc_data_file:sock_file create_file_perms;
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default keystore_service:service_manager { find };
 allow hal_fingerprint_default keystore:keystore_key { add_auth };
+allow hal_fingerprint_default storage_file:dir { search };
 
 binder_call(hal_fingerprint_default, servicemanager)
 binder_call(hal_fingerprint_default, keystore)
