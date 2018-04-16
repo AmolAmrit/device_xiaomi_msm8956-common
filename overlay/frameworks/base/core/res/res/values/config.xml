@@ -415,24 +415,24 @@
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
 
 
-   <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
-   <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
+ 
+    <!-- AlwaysOnDisplay  -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
-   <!-- AlwaysOnDisplay  -->
-   <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
-
-   <!-- Default value for proximity check on screen wake
+    <!-- Default value for proximity check on screen wake
         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
-   -->
-   <bool name="config_proximityCheckOnWake">true</bool>
-   <integer name="config_proximityCheckTimeout">250</integer>
-   <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+    -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">250</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
 
-  <!-- Stop listening to the fingerprint reader when NON-WAKEUP proximity sensor is covered & screen is off.
+   <!-- Stop listening to the fingerprint reader when NON-WAKEUP proximity sensor is covered & screen is off.
          config_proximityCheckOnWake must be true. -->
-  <bool name="config_proximityCheckOnFingerprintWake">true</bool>
+   <bool name="config_proximityCheckOnFingerprintWake">true</bool>
 
 </resources>
 
