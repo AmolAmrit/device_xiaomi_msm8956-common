@@ -326,6 +326,8 @@ vendor/etc/perf-profile6.conf|16e84cbd39c7fd0346647c41e32bf2c65220babd
 -vendor/lib64/libqti_performance.so|d0707d9843d779a4d773bf0529b26fd095ee6e44 
 -vendor/lib/libqti-perfd-client.so|a67ee781bf77eb1c7f0f1fb6a00ac68d4f1280d6
 -vendor/lib/libqti_performance.so|bd683808b1f09a3987d43ae8f62defd10f55d10e
+vendor/lib/libfeedbackhandler.so|e4517583915a79efc1b6bf121854be150b0373a8
+vendor/lib64/libfeedbackhandler.so|d9892463f4fc6ffadb0ed8a087cc7d7b29d42087 
 
 # Peripheral manager
 bin/pm-proxy
