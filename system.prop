@@ -48,7 +48,7 @@ persist.dpm.feature=5
 dalvik.vm.boot-dex2oat-threads=6
 
 # Dex2oat use 4 cores durning normal dex compilation (app installations)
-dalvik.vm.dex2oat-threads=4
+dalvik.vm.dex2oat-threads=6
 
 # Dex2oat use 4 cores during boot image dex compilation
 dalvik.vm.image-dex2oat-threads=4
