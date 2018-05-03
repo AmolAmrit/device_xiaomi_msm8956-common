@@ -16,3 +16,8 @@
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
 
+# Legacy paths
+/system/bin/mm-qcamera-daemon                                         u:object_r:mm-qcamerad_exec:s0
+/system/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
+/system/bin/energy-awareness                                          u:object_r:energyawareness_exec:s0
+/system/bin/wcnss_filter                                              u:object_r:wcnss_filter_exec:s0
