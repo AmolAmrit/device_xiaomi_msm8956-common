@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cyanogenmod.settings.doze"
+    package="org.lineageos.settings.doze"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -27,8 +27,8 @@
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <uses-sdk
-        android:minSdkVersion="26"
-        android:targetSdkVersion="26"/>
+        android:minSdkVersion="24"
+        android:targetSdkVersion="24"/>
 
     <application
         android:label="@string/device_settings_app_name"
@@ -50,10 +50,8 @@
             android:label="@string/ambient_display_gestures_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.display" />
