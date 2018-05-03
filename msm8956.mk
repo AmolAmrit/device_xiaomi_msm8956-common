@@ -117,6 +117,7 @@ PRODUCT_PACKAGES += \
     camera.msm8952 \
     libqomx_core \
     Snap \
+    SnapdragonCamera \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
