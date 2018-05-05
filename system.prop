@@ -122,6 +122,7 @@ persist.vendor.radio.start_ota_daemon=1
 persist.vendor.radio.adb_log_on=1
 persist.radio.sw_mbn_update=0
 persist.data.qmi.adb_logmask=0
+persist.radio.aosp_usr_pref_sel=true
 
 # TCP
 net.tcp.2g_init_rwnd=10
