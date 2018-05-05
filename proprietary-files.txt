@@ -347,35 +347,6 @@ etc/firmware/venus-v1.b04|c1756e0567d10a1173f481cd367ff4637b2dd77f
 etc/firmware/venus-v1.mbn|84080bf9128b325d6c52143129aea3c932e50ee1
 etc/firmware/venus-v1.mdt|3156b0aeef473554c1b96a2b8c678d2b9c269c06
 
-# Perf
--lib/vendor.qti.hardware.iop@1.0.so
-lib/vendor.qti.hardware.perf@1.0.so
--lib64/vendor.qti.hardware.iop@1.0.so
-lib64/vendor.qti.hardware.perf@1.0.so
-vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perfboostsconfig.xml
-vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-iopd.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-iopd.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
-
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
