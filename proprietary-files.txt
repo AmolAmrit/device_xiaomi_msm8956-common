@@ -280,6 +280,8 @@ vendor/lib64/libmm-qdcm.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
+vendor/lib/hw/vulkan.msm8952.so|e8af3bc7340e6eab2aaa9a21dd3a749ee8a452be
+vendor/lib64/hw/vulkan.msm8952.so|68d1968e57e98bf77ef2a5030d7880757514d358
 
 # Graphics firmware
 etc/firmware/a530_pfp.fw
