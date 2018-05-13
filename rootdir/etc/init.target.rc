@@ -131,7 +131,6 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
     start vendor.imsrcsservice
 
 on charger
-    load_all_props
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
