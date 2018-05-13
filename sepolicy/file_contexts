@@ -1,6 +1,3 @@
-# Cache
-/dev/block/platform/soc.0/7824900.sdhci/by-name/cache                 u:object_r:cache_block_device:s0
-
 # Decrypt
 /data/decrypt.txt                                                     u:object_r:decrypt_file:s0
 
