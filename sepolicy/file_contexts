@@ -1,3 +1,6 @@
+# Bluetooth
+/system/vendor/bin/btnvtool                                           u:object_r:bluetooth_loader_exec:s0
+
 # Decrypt
 /data/decrypt.txt                                                     u:object_r:decrypt_file:s0
 
