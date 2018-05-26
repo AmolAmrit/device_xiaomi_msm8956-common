@@ -28,6 +28,7 @@ vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
+vendor/lib/libadpcmdec.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libhwdaphal.so
@@ -418,6 +419,7 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
+vendor/lib/libsmwrapper.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -547,6 +549,7 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 # Sensors
 vendor/bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8952.so
+vendor/lib/hw/sound_trigger.primary.msm8952.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/sensor_calibrate.so
