@@ -10,14 +10,13 @@ vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.track.enable=false
 vendor.audio.playback.mch.downsample=true
 vendor.audio.safx.pbe.enabled=true
-
 persist.audio.dirac.speaker=true
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
 
 ro.vendor.qc.sdk.audio.fluencetype=fluence
 ro.vendor.qc.sdk.audio.ssr=false
-vendor.tunnel.audio.encode=false
+vendor.audio.tunnel.encode=false
 vendor.voice.path.for.pcm.voip=true
 vendor.voice.conc.fallbackpath=deep-buffer
 vendor.voice.playback.conc.disabled=true
