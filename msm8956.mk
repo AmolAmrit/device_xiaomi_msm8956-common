@@ -66,6 +66,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+#Android net
+PRODUCT_PACKAGES += \
+   libandroid_net \
+   libandroid_net_32
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -269,8 +274,7 @@ PRODUCT_COPY_FILES += \
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
-    android.system.net.netd@1.0 \
-    libandroid_net
+    android.system.net.netd@1.0
 
 # OMX
 PRODUCT_PACKAGES += \
