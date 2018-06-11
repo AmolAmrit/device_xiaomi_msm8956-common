@@ -366,6 +366,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
+
+# Widevine
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-service.widevine
+
 # VR
 PRODUCT_PACKAGES += \
     android.hardware.vr@1.0-impl \
