@@ -290,7 +290,7 @@ Only the three quirks included above are recognized at this point:
             <Feature name="secure-playback" required="true" />
             <Limit name="concurrent-instances" max="7" />
         </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.vc1" type="video/wvc1" >
+        <MediaCodec name="OMX.qcom.video.decoder.vc1" type="video/x-ms-wmv" >        
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Limit name="size" min="64x64" max="1920x1088" />
@@ -301,7 +301,7 @@ Only the three quirks included above are recognized at this point:
             <Feature name="adaptive-playback" />
             <Limit name="concurrent-instances" max="16" />
         </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.vc1.secure" type="video/wvc1" >
+        <MediaCodec name="OMX.qcom.video.decoder.vc1.secure" type="video/x-ms-wmv" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
             <Limit name="size" min="64x64" max="1920x1088" />
