@@ -82,7 +82,7 @@ start_vm_bms()
 
 start_msm_irqbalance_8939()
 {
-	if [ -f /system/vendor/bin/msm_irqbalance ]; then
+	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
 		    "239" | "293" | "294" | "295" | "304" | "313" | "338" | "351" )
 			start vendor.msm_irqbalance;;
@@ -92,7 +92,7 @@ start_msm_irqbalance_8939()
 
 start_msm_irqbalance_8952()
 {
-        if [ -f /system/vendor/bin/msm_irqbalance ]; then
+        if [ -f /vendor/bin/msm_irqbalance ]; then
                 case "$platformid" in
                      "241" | "263" | "264" | "268" | "269" | "270" | "271")
                         start vendor.msm_irqbalance;;
@@ -456,8 +456,8 @@ if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_versio
     chown radio.radio /data/vendor/radio/ver_info.txt
 fi
 
-if [ -f /system/etc/mbn_ota.txt ] && [ ! -f /data/misc/radio/modem_config/mbn_ota.txt ]; then
-    cp /system/etc/mbn_ota.txt /data/vendor/radio/modem_config
+if [ -f /vendor/etc/mbn_ota.txt ] && [ ! -f /data/misc/radio/modem_config/mbn_ota.txt ]; then
+    cp /vendor/etc/mbn_ota.txt /data/vendor/radio/modem_config
     chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
 fi
 
