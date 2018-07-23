@@ -302,6 +302,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
 
+# Properties
+include $(LOCAL_PATH)/vendor_prop.mk
+
 # QPerformance
 PRODUCT_BOOT_JARS += QPerformance
 
