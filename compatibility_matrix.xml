@@ -64,6 +64,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="false">
+        <name>android.system.net.netd</name>
+        <version>1.0</version>
+        <interface>
+            <name>INetd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
         <name>android.system.wifi.keystore</name>
         <version>1.0</version>
         <interface>
@@ -71,4 +79,8 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="native" optional="false">
+        <name>netutils-wrapper</name>
+        <version>1.0</version>
+    </hal> 
 </compatibility-matrix>
