@@ -29,6 +29,18 @@ VNDK_SP_LIBRARIES := \
     libunwind \
     libutils
 
+EXTRA_VENDOR_LIBRARIES := \
+    android.hardware.configstore@1.0 \
+    android.hardware.configstore-utils \
+    android.hardware.ir@1.0 \
+    android.hardware.vibrator@1.0 \
+    libhardware_legacy \
+    libbinder \
+    libui \
+    libEGL \
+    libdl \
+    libsync
+
 define define-vndk-lib
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $1.$2
