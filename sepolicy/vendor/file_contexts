@@ -27,7 +27,7 @@
 /sys/android_touch/doubletap2wake                                     u:object_r:sysfs_dt2w:s0
 
 # Fingerprint
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_8956_exec:s0
 
 # Legacy paths
 /system/bin/mm-qcamera-daemon                                         u:object_r:mm-qcamerad_exec:s0
