@@ -213,6 +213,12 @@ include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
+# Thermal
+USE_DEVICE_SPECIFIC_THERMAL := true
+
+# Vr
+USE_DEVICE_SPECIFIC_VR := true
+
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_HAS_QCOM_WLAN         := true
