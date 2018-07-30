@@ -129,35 +129,6 @@ vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# DPM
-bin/dpmd:vendor/bin/dpmd
-etc/init/dpmd.rc:vendor/etc/init/dpmd.rc
--priv-app/dpmserviceapp/dpmserviceapp.apk
-etc/dpm/dpm.conf:vendor/etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml:vendor/etc/dpm/nsrm/NsrmConfiguration.xml
-etc/permissions/com.qti.dpmframework.xml:vendor/etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml:vendor/etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar:vendor/framework/com.qti.dpmframework.jar
-framework/dpmapi.jar:vendor/framework/dpmapi.jar
-framework/tcmclient.jar:vendor/framework/tcmclient.jar
-lib/com.qualcomm.qti.dpm.api@1.0.so:vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
-lib/libdpmctmgr.so:vendor/lib/libdpmctmgr.so
-lib/libdpmfdmgr.so:vendor/lib/libdpmfdmgr.so
-lib/libdpmframework.so:vendor/lib/libdpmframework.so
-lib/libdpmnsrm.so:vendor/lib/libdpmnsrm.so
-lib/libdpmtcm.so:vendor/lib/libdpmtcm.so
-lib64/com.qualcomm.qti.dpm.api@1.0.so:vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
-lib64/libdpmctmgr.so:vendor/lib64/libdpmctmgr.so
-lib64/libdpmfdmgr.so:vendor/lib64/libdpmfdmgr.so
-lib64/libdpmframework.so:vendor/lib64/libdpmframework.so
-lib64/libdpmnsrm.so:vendor/lib64/libdpmnsrm.so
-lib64/libdpmtcm.so:vendor/lib64/libdpmtcm.so
-vendor/bin/dpmQmiMgr
-vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib/libdpmqmihal.so
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib64/libdpmqmihal.so
-
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
