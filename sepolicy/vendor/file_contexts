@@ -22,3 +22,9 @@
 # Input devices
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
 /(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
+
+# Subsystem restart
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/name          u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,venus/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
