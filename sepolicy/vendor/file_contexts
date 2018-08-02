@@ -2,6 +2,10 @@
 /vendor/bin/btnvtool                                           u:object_r:bluetooth_loader_exec:s0
 /(vendor|system/vendor)/bin/hci_qcomm_init                     u:object_r:bluetooth_loader_exec:s0
 
+# Camera
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,cci/[0-9]+\.qcom,camera/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
+
 
 # Decrypt
 /data/decrypt.txt                                                     u:object_r:decrypt_file:s0
