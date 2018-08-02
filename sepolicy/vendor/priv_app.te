@@ -1,1 +1,2 @@
 allow priv_app device:dir r_dir_perms;
+dontaudit priv_app proc_interrupts:file  open;
