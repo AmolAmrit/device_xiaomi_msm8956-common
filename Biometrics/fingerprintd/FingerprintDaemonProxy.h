@@ -19,8 +19,11 @@
 
 #include "IFingerprintDaemon.h"
 #include "IFingerprintDaemonCallback.h"
+#include <hidl/MQDescriptor.h>
 
 namespace android {
+
+using ::android::hardware::hidl_vec;
 
 class FingerprintDaemonProxy : public BnFingerprintDaemon {
     public:
