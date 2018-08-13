@@ -1,45 +1,14 @@
 LOCAL_PATH := $(call my-dir)
 
-VNDK_SP_LIBRARIES := \
-    android.hardware.graphics.allocator@2.0 \
-    android.hardware.graphics.mapper@2.0 \
-    android.hardware.graphics.common@1.0 \
-    android.hardware.renderscript@1.0 \
-    android.hidl.base@1.0 \
-    android.hidl.memory@1.0 \
-    libRSCpuRef \
-    libRSDriver \
-    libRS_internal \
-    libbacktrace \
-    libbase \
-    libbcinfo \
-    libblas \
-    libc++ \
-    libcompiler_rt \
-    libcutils \
-    libft2 \
-    libhardware \
-    libhidlbase \
-    libhidlmemory \
-    libhidltransport \
-    libhwbinder \
-    libion \
-    liblzma \
-    libpng \
-    libunwind \
-    libutils
-
 EXTRA_VENDOR_LIBRARIES := \
     android.hardware.configstore@1.0 \
     android.hardware.configstore-utils \
-    android.hardware.ir@1.0 \
     android.hardware.vibrator@1.0 \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
     libhardware_legacy \
     libbinder \
-    libui \
-    libEGL \
-    libdl \
-    libsync
+    libui
 
 define define-vndk-lib
 include $$(CLEAR_VARS)
@@ -73,10 +42,6 @@ endif  # TARGET_TRANSLATE_2ND_ARCH is not true
 endif  # TARGET_2ND_ARCH is not empty
 endef
 
-$(foreach lib,$(VNDK_SP_LIBRARIES),\
-    $(eval $(call define-vndk-lib,$(lib),vndk-sp-gen,vndk-sp,)))
-$(foreach lib,$(VNDK_SP_EXT_LIBRARIES),\
-    $(eval $(call define-vndk-lib,$(lib),vndk-sp-ext-gen,vndk-sp,true)))
 $(foreach lib,$(EXTRA_VENDOR_LIBRARIES),\
     $(eval $(call define-vndk-lib,$(lib),vndk-ext-gen,,true)))
 
@@ -84,7 +49,5 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := vndk-sp
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := \
-    $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES)) \
-    $(addsuffix .vndk-sp-ext-gen,$(VNDK_SP_EXT_LIBRARIES)) \
     $(addsuffix .vndk-ext-gen,$(EXTRA_VENDOR_LIBRARIES))
 include $(BUILD_PHONY_PACKAGE)
