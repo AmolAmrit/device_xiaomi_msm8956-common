@@ -1,8 +1,8 @@
 # ADSP
-lib/libadsprpc.so:vendor/lib/libadsprpc.so
+lib/libadsprpc.so
 lib/libqvr_adsp_driver_skel.so:vendor/lib/libqvr_adsp_driver_skel.so
 lib/libqvr_adsp_driver_stub.so:vendor/lib/libqvr_adsp_driver_stub.so
-lib64/libadsprpc.so:vendor/lib64/libadsprpc.so
+lib64/libadsprpc.so
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
@@ -79,12 +79,12 @@ vendor/bin/hvdcp_opti
 # CNE
 etc/cne/SwimConfig.xml:vendor/etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml:vendor/etc/cne/andsfCne.xml
-etc/permissions/cneapiclient.xml:vendor/etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml:vendor/etc/permissions/com.quicinc.cne.xml
-framework/cneapiclient.jar:vendor/framework/cneapiclient.jar
-framework/com.quicinc.cne.jar:vendor/framework/com.quicinc.cne.jar
-lib/libvendorconn.so:vendor/lib/libvendorconn.so
-lib64/libvendorconn.so:vendor/lib64/libvendorconn.so
+etc/permissions/cneapiclient.xml
+etc/permissions/com.quicinc.cne.xml
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
+lib/libvendorconn.so
+lib64/libvendorconn.so
 -priv-app/CNEService/CNEService.apk
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
@@ -154,14 +154,14 @@ etc/firmware/DE.o.msm8976:vendor/firmware/DE.o.msm8976|676a46b8d21ac238fa12fbccd
 vendor/lib64/hw/gatekeeper.msm8952.so
 
 # GPS
-etc/permissions/com.qti.location.sdk.xml:vendor/etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml:vendor/etc/permissions/com.qualcomm.location.xml
-etc/permissions/izat.xt.srv.xml:vendor/etc/permissions/izat.xt.srv.xml
-framework/com.qti.location.sdk.jar:vendor/framework/com.qti.location.sdk.jar
-framework/izat.xt.srv.jar:vendor/framework/izat.xt.srv.jar
-lib64/liblocationservice_jni.so:vendor/lib64/liblocationservice_jni.so
-lib64/libxt_native.so:vendor/lib64/libxt_native.so
-lib64/vendor.qti.gnss@1.0.so:vendor/lib64/vendor.qti.gnss@1.0.so
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.xml
+etc/permissions/izat.xt.srv.xml
+framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar
+lib64/liblocationservice_jni.so
+lib64/libxt_native.so
+lib64/vendor.qti.gnss@1.0.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
@@ -326,6 +326,7 @@ etc/firmware/venus-v1.b04:vendor/firmware/venus-v1.b04|c1756e0567d10a1173f481cd3
 etc/firmware/venus-v1.mbn:vendor/firmware/venus-v1.mbn|84080bf9128b325d6c52143129aea3c932e50ee1
 etc/firmware/venus-v1.mdt:vendor/firmware/venus-v1.mdt|3156b0aeef473554c1b96a2b8c678d2b9c269c06
 
+
 # Perf (Boostframework from Nougat)
 -framework/QPerformance.jar|24538508662ecdaa9e3e5d94e3c25451753091bb 
 vendor/bin/perfd|f223d9f876bc9e57c20ab805b78f3b66ecbc1ce0
@@ -345,6 +346,7 @@ vendor/etc/perf-profile6.conf|16e84cbd39c7fd0346647c41e32bf2c65220babd
 vendor/lib/libfeedbackhandler.so|e4517583915a79efc1b6bf121854be150b0373a8
 vendor/lib64/libfeedbackhandler.so|d9892463f4fc6ffadb0ed8a087cc7d7b29d42087 
 
+
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
@@ -352,14 +354,14 @@ vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
 # Postprocessing
-etc/permissions/com.qti.snapdragon.sdk.display.xml:vendor/etc/permissions/com.qti.snapdragon.sdk.display.xml
-framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
--lib/vendor.display.color@1.0.so:vendor/lib/vendor.display.color@1.0.so
-lib/vendor.display.postproc@1.0.so:vendor/lib/vendor.display.postproc@1.0.so
-lib/vendor.qti.hardware.qdutils_disp@1.0.so:vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
--lib64/vendor.display.color@1.0.so:vendor/lib64/vendor.display.color@1.0.so
-lib64/vendor.display.postproc@1.0.so:vendor/lib64/vendor.display.postproc@1.0.so
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so:vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar
+-lib/vendor.display.color@1.0.so
+lib/vendor.display.postproc@1.0.so
+lib/vendor.qti.hardware.qdutils_disp@1.0.so
+-lib64/vendor.display.color@1.0.so
+lib64/vendor.display.postproc@1.0.so
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib/libdisp-aba.so
 vendor/lib/libsd_sdk_display.so
 vendor/lib/vendor.display.color@1.0_vendor.so
@@ -374,10 +376,10 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 # QMI
 etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
-lib/libdiag_system.so:vendor/lib/libdiag_system.so
-lib/libqmi_cci_system.so:vendor/lib/libqmi_cci_system.so
-lib64/libdiag_system.so:vendor/lib64/libdiag_system.so
-lib64/libqmi_cci_system.so:vendor/lib64/libqmi_cci_system.so
+lib/libdiag_system.so
+lib/libqmi_cci_system.so
+lib64/libdiag_system.so
+lib64/libqmi_cci_system.so
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
@@ -414,10 +416,10 @@ vendor/lib64/libsmemlog.so
 
 # Radio
 -app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
--framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
--framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
+etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml
+-framework/QtiTelephonyServicelibrary.jar
+-framework/qcrilhook.jar
 -framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/netmgrd
@@ -468,26 +470,26 @@ vendor/radio/qcril_database/qcril.db
 # Radio - IMS
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
-etc/permissions/qti-vzw-ims-internal.xml:vendor/etc/permissions/qti-vzw-ims-internal.xml
-lib/com.qualcomm.qti.imscmservice@1.0.so:vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/lib-imscamera.so:vendor/lib/lib-imscamera.so
-lib/lib-imsvideocodec.so:vendor/lib/lib-imsvideocodec.so
-lib/lib-imsvtextutils.so:vendor/lib/lib-imsvtextutils.so
-lib/lib-imsvtutils.so:vendor/lib/lib-imsvtutils.so
-lib/libimscamera_jni.so:vendor/lib/libimscamera_jni.so
-lib/libimsmedia_jni.so:vendor/lib/libimsmedia_jni.so
-lib/librcc.so:vendor/lib/librcc.so
-lib/vendor.qti.imsrtpservice@1.0.so:vendor/lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so:vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/lib-imscamera.so:vendor/lib64/lib-imscamera.so
-lib64/lib-imsvideocodec.so:vendor/lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so:vendor/lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so:vendor/lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so:vendor/lib64/lib-imsvtutils.so
-lib64/libimscamera_jni.so:vendor/lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so:vendor/lib64/libimsmedia_jni.so
-lib64/librcc.so:vendor/lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so:vendor/lib64/vendor.qti.imsrtpservice@1.0.so
+etc/permissions/qti-vzw-ims-internal.xml
+lib/com.qualcomm.qti.imscmservice@1.0.so
+lib/lib-imscamera.so
+lib/lib-imsvideocodec.so
+lib/lib-imsvtextutils.so
+lib/lib-imsvtutils.so
+lib/libimscamera_jni.so
+lib/libimsmedia_jni.so
+lib/librcc.so
+lib/vendor.qti.imsrtpservice@1.0.so
+lib64/com.qualcomm.qti.imscmservice@1.0.so
+lib64/lib-imscamera.so
+lib64/lib-imsvideocodec.so
+lib64/lib-imsvt.so
+lib64/lib-imsvtextutils.so
+lib64/lib-imsvtutils.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
+lib64/librcc.so
+lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
