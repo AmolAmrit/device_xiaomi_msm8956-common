@@ -17,7 +17,7 @@
 #define LOG_NDEBUG 0
 #define LOG_TAG "FingerprintHal"
 #include <unistd.h>
-#include <cutils/log.h>
+#include <log/log.h>
 #include <hardware/fingerprint.h>
 #include <binder/IServiceManager.h>
 
