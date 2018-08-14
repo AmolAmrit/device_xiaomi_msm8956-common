@@ -1,5 +1,10 @@
 # Bluetooth
-/system/vendor/bin/btnvtool                                           u:object_r:bluetooth_loader_exec:s0
+/vendor/bin/btnvtool                                                  u:object_r:bluetooth_loader_exec:s0
+/(vendor|system/vendor)/bin/hci_qcomm_init                            u:object_r:bluetooth_loader_exec:s0
+
+# Camera
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
+/sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,cci/[0-9]+\.qcom,camera/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
 
 # Decrypt
 /data/decrypt.txt                                                     u:object_r:decrypt_file:s0
@@ -22,3 +27,27 @@
 /system/bin/wcnss_service                                             u:object_r:wcnss_service_exec:s0
 /system/bin/energy-awareness                                          u:object_r:energyawareness_exec:s0
 /system/bin/wcnss_filter                                              u:object_r:wcnss_filter_exec:s0
+
+# Input devices
+/(vendor|system/vendor)/usr/idc(/.*)?                                 u:object_r:idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?                           u:object_r:keylayout_file:s0
+
+# Persist
+/dev/block/platform/soc.0/7824900.sdhci/by-name/persist               u:object_r:persist_block_device:s0
+
+# Subsystem restart
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/name          u:object_r:sysfs_ssr:s0
+/sys/devices/soc\.0/[0-9a-f]+\.qcom,venus/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+
+# Same process hal's (vndk-ext-gen libs) and its dependencies
+/vendor/lib(64)?/hw/android\.hardware\.vibrator@1\.0-impl\.so         u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/gralloc\.msm8952\.so                              u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vibrator\.default\.so                             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/android\.hardware\.configstore@1\.0\.so              u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/android\.hardware\.configstore-utils\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/android\.hardware\.vibrator@1\.0\.so                 u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libbinder\.so                                        u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmemalloc\.so                                      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libui\.so                                            u:object_r:same_process_hal_file:s0
