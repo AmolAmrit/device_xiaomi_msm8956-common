@@ -7,3 +7,5 @@ allow wcnss_service wifi_prop:property_service { set };
 
 binder_call(wcnss_service, servicemanager)
 typeattribute wcnss_service binder_in_vendor_violators;
+
+dontaudit wcnss_service serialno_prop:file { r_file_perms };
