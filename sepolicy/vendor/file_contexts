@@ -27,6 +27,9 @@
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
 /(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
 
+# Persist
+/dev/block/platform/soc.0/7824900.sdhci/by-name/persist               u:object_r:persist_block_device:s0
+
 # Subsystem restart
 /sys/devices/soc\.0/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
 /sys/devices/soc\.0/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0
