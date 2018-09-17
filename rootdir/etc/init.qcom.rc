@@ -317,13 +317,6 @@ on post-fs-data
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
 
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
-
     # Create directory used by audio subsystem
     mkdir /data/vendor/misc/audio 0770 audio audio
 
@@ -484,12 +477,6 @@ service cnd /system/vendor/bin/cnd
     class main
     user system
     group system wifi inet radio wakelock net_admin
-    writepid /dev/cpuset/system-background/tasks
-
-service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group radio system
     writepid /dev/cpuset/system-background/tasks
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
