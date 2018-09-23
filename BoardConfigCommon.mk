@@ -210,6 +210,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/lib64/lib-imsvideocodec.so|libshim_ims.so
+
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
