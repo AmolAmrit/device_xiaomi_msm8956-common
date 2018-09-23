@@ -43,6 +43,11 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libhwdaphal.so
 
+# Audio dirac - from xiaomi
+lib/soundfx/libdirac.so 
+lib/libDiracAPI_SHARED.so
+vendor/etc/diracmobile.config
+
 # Bluetooth - QTI Stack
 vendor/bin/btnvtool|062b5261293fe12ffe3a5794f86df3266086babf
 vendor/bin/wcnss_filter
