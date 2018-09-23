@@ -93,6 +93,7 @@
         <interface>
             <name>IGnss</name>
             <instance>default</instance>
+            <fqname>@1.0::IGnss/default</fqname>
             <fqname>@1.0::IGnss/gnss_vendor</fqname>
         </interface>
     </hal>
@@ -340,8 +341,10 @@
             <name>ILocHidlGnss</name>
             <instance>gnss_vendor</instance>
         </interface>
+        <fqname>@1.0::ILocHidlGnss/gnss_vendor</fqname>
     </hal>
-    <!-- Thermal HAL Service -->
+ 
+   <!-- Thermal HAL Service -->
     <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
