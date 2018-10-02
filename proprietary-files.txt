@@ -43,12 +43,15 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libhwdaphal.so
 
-# Bluetooth
-vendor/bin/btnvtool
-vendor/bin/hci_qcomm_init
+# Bluetooth - QTI Stack
+vendor/bin/btnvtool|062b5261293fe12ffe3a5794f86df3266086babf
 vendor/bin/wcnss_filter
-vendor/lib/libbtnv.so
-vendor/lib64/libbtnv.so
+vendor/lib/libbtnv.so|6bed150f70d3ddd91752dccc5ec3d9eab332a713
+vendor/lib64/libbtnv.so|89c9392ae151148d7a88c4de6962c0628af2af45
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so|e843cbb159a0a3f39dbc7049f9830754e40981cd
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|1aedc27dec31faff77f4a71b18a8a5e00be1e78d
+vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so||65741ce5d42b118146362929864fae6ff46d353
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|7b0558d59626a90e2d48b2626334dc39238c6505
 
 # Bluetooth aptX
 vendor/lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c 
