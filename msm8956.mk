@@ -344,20 +344,20 @@ PRODUCT_PACKAGES += \
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
-    textclassifier.smartselection.bundle1 \
-    textclassifier.smartselection.ar.model \
-    textclassifier.smartselection.de.model \
-    textclassifier.smartselection.en.model \
-    textclassifier.smartselection.es.model \
-    textclassifier.smartselection.fr.model \
-    textclassifier.smartselection.it.model \
-    textclassifier.smartselection.nl.model \
-    textclassifier.smartselection.pl.model \
-    textclassifier.smartselection.pt.model \
-    textclassifier.smartselection.ru.model \
-    textclassifier.smartselection.tr.model \
-    textclassifier.smartselection.zh.model \
-    textclassifier.smartselection.zh-Hant.model
+    textclassifier.bundle1 \
+    textclassifier.ar.model \
+    textclassifier.de.model \
+    textclassifier.en.model \
+    textclassifier.es.model \
+    textclassifier.fr.model \
+    textclassifier.it.model \
+    textclassifier.nl.model \
+    textclassifier.pl.model \
+    textclassifier.pt.model \
+    textclassifier.ru.model \
+    textclassifier.tr.model \
+    textclassifier.zh.model \
+    textclassifier.zh-Hant.model
 
 # Thermal
 PRODUCT_PACKAGES += \
