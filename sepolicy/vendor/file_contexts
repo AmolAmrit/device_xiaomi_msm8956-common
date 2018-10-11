@@ -45,6 +45,7 @@
 /vendor/lib(64)?/hw/android\.hardware\.vibrator@1\.0-impl\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/gralloc\.msm8952\.so                              u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vibrator\.default\.so                             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.msm8952\.so                               u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/android\.hardware\.configstore@1\.0\.so              u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/android\.hardware\.configstore-utils\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/android\.hardware\.vibrator@1\.0\.so                 u:object_r:same_process_hal_file:s0
