@@ -110,31 +110,21 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        final String key = preference.getKey();
-        final boolean value = (Boolean) newValue;
-        if (Utils.GESTURE_PICK_UP_KEY.equals(key)) {
-            mPickUpPreference.setChecked(value);
-        } else if (Utils.GESTURE_HAND_WAVE_KEY.equals(key)) {
-            mHandwavePreference.setChecked(value);
-        } else if (Utils.GESTURE_POCKET_KEY.equals(key)) {
-            mPocketPreference.setChecked(value);
-        } else {
-            return false;
-        }
+        Utils.enableGesture(getActivity(), preference.getKey(), (Boolean) newValue);
         Utils.checkDozeService(getActivity());
         return true;
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        Utils.enableDoze(b, getActivity());
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        Utils.enableDoze(getActivity(), isChecked);
         Utils.checkDozeService(getActivity());
 
-        mTextView.setText(getString(b ? R.string.switch_bar_on : R.string.switch_bar_off));
+        mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
 
-        mPickUpPreference.setEnabled(b);
-        mHandwavePreference.setEnabled(b);
-        mPocketPreference.setEnabled(b);
+        mPickUpPreference.setEnabled(isChecked);
+        mHandwavePreference.setEnabled(isChecked);
+        mPocketPreference.setEnabled(isChecked);
     }
 
     @Override
