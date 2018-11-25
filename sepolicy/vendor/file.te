@@ -4,3 +4,7 @@ type fingerprintd_custom_service, service_manager_type;
 
 # DT2W
 type sysfs_dt2w, sysfs_type, fs_type;
+
+# Input devices
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
