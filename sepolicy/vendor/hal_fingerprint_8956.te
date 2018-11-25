@@ -1,0 +1,22 @@
+type hal_fingerprint_8956, domain, binder_in_vendor_violators;
+type hal_fingerprint_8956_exec, exec_type, vendor_file_type, file_type;
+
+hal_server_domain(hal_fingerprint_8956, hal_fingerprint)
+
+init_daemon_domain(hal_fingerprint_8956)
+
+add_service(hal_fingerprint_8956, fingerprintd_custom_service);
+
+allow hal_fingerprint_8956 fingerprintd_data_file:dir write;
+allow hal_fingerprint_8956 fingerprintd_data_file:file getattr;
+allow hal_fingerprint_8956 fpc_data_file:dir rw_dir_perms;
+allow hal_fingerprint_8956 fpc_data_file:sock_file create_file_perms;
+allow hal_fingerprint_8956 fpc_sysfs:file rw_file_perms;
+allow hal_fingerprint_8956 storage_file:dir search;
+allow hal_fingerprint_8956 sysfs_vadc_dev:dir search;
+allow hal_fingerprint_8956 tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_8956 uhid_device:chr_file rw_file_perms;
+
+binder_use(hal_fingerprint_8956)
+
+r_dir_file(hal_fingerprint_8956, firmware_file)
