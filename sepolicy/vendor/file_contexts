@@ -1,6 +1,5 @@
 # Bluetooth
 /vendor/bin/btnvtool                                                  u:object_r:bluetooth_loader_exec:s0
-/(vendor|system/vendor)/bin/hci_qcomm_init                            u:object_r:bluetooth_loader_exec:s0
 
 # Camera
 /sys/devices(/platform)?/soc\.0/[0-9a-f]+\.qcom,msm-cam/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
