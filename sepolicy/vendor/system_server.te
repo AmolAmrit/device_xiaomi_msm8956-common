@@ -6,3 +6,10 @@ allow system_server default_android_service:service_manager add;
 # DT2W
 allow system_server sysfs_dt2w:dir search;
 allow system_server sysfs_dt2w:file rw_file_perms;
+
+# Input devices
+r_dir_file(system_server, idc_file);
+r_dir_file(system_server, keylayout_file);
+
+# Last kmsg
+allow system_server proc_last_kmsg:file r_file_perms;
