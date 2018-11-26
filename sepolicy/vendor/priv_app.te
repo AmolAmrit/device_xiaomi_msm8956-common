@@ -1,2 +1,12 @@
 allow priv_app device:dir r_dir_perms;
-dontaudit priv_app proc_interrupts:file  open;
+
+# Loop
+allow priv_app sysfs_loop:file { read open };
+
+# PCI
+allow priv_app proc_pci_devices:file r_file_perms;
+
+# Wcnss
+allow priv_app sysfs_wcnss:file { read open };
+
+dontaudit priv_app proc_interrupts:file open;

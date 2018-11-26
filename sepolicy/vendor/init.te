@@ -1,5 +1,8 @@
 allow init debugfs:file write;
 
+# Boot reason
+allow init proc_kernel_boot_reason:file { read getattr };
+
 # DT2W
 allow init sysfs_dt2w:file { rw_file_perms setattr };
 
