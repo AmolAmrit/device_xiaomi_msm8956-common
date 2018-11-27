@@ -1,0 +1,6 @@
+allow hostapd wifi_data_file:dir search;
+
+#diag
+userdebug_or_eng(`
+    diag_use(hostapd)
+')
