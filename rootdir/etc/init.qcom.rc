@@ -606,6 +606,10 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
+    trigger enable-low-power
+
+on property:init.svc.recovery=running
+    trigger enable-low-power
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
@@ -644,12 +648,6 @@ on charger
 on property:init.svc.surfaceflinger=restarting
     stop vendor.hwcomposer-2-1
     start vendor.hwcomposer-2-1
-
-on property:init.svc.recovery=running
-    trigger enable-low-power
-
-on property:dev.bootcomplete=1
-    trigger enable-low-power
 
 service time_daemon /system/vendor/bin/time_daemon
     class main
