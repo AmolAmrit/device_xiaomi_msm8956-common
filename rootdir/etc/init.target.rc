@@ -84,7 +84,7 @@ service qseecomd /system/vendor/bin/qseecomd
 service perfd /system/vendor/bin/perfd
    class main
    user root
-   writepid /dev/cpuset/system-background/tasks
+   disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main

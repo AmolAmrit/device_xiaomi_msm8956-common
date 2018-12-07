@@ -297,10 +297,10 @@
         <item>"/system/framework/boot.vdex"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/boot-core-libart.vdex"</item>
-        <item>"/system/framework/arm64/boot-QPerformance.oat"</item>
         <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.vdex"</item>
         <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
+
     </string-array>
 
     <!-- Should the pinner service pin the Camera application? -->
@@ -366,82 +366,6 @@
 
     <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
     <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
-
-    <!-- Whether cpu boost is enabled for AppLaunch -->
-    <bool name="config_enableCpuBoostForAppLaunch">true</bool>
-    <integer name="launchboost_timeout_param">2000</integer>
-    <integer-array name="launchboost_param_value">
-        <item>0x40C00000</item>
-        <item>0x00000001</item>
-        <item>0x40800000</item>
-        <item>0x00000708</item>
-        <item>0x40400000</item>
-        <item>0x00000001</item>
-        <item>0x41000000</item>
-        <item>0x00000004</item>
-        <item>0x42804000</item>
-        <item>0x00000001</item>
-    </integer-array>
-
-    <!-- Whether disablepacking is enabled or not -->
-    <bool name="config_disablePacking">true</bool>
-    <integer name="disablepacking_timeout_param">5000</integer>
-    <integer-array name="launchboost_packing_param_value">
-        <item>0x40C04000</item>
-        <item>0x00000001</item>
-        <item>0x40C0C000</item>
-        <item>0x00000001</item>
-        <item>0x40C14000</item>
-        <item>0x00000001</item>
-        <item>0x40C10000</item>
-        <item>0x00000001</item>
-    </integer-array>
-
-    <!-- Whether cpu boost is enabled for animation. -->
-    <bool name="config_enablePerfBoostForAnimation">true</bool>
-    <integer name="animationboost_timeout_param">600</integer>
-    <integer-array name="animationboost_param_value">
-        <item>0x40C00000</item>
-        <item>0x00000001</item>
-        <item>0x40800000</item>
-        <item>0x0000044C</item>
-        <item>0x42804000</item>
-        <item>0x00000001</item>
-    </integer-array>
-
-    <!-- Whether cpu boost is enabled for overscroller fling. -->
-    <bool name="config_enableCpuBoostForOverScrollerFling">true</bool>
-    <integer name="flingboost_timeout_param">0</integer>
-    <integer-array name="flingboost_param_value">
-        <item>0x40C00000</item>
-        <item>0x00000001</item>
-        <item>0x40800000</item>
-        <item>0x00000708</item>
-        <item>0x40C04000</item>
-        <item>0x00000001</item>
-    </integer-array>
-
-    <!-- Whether cpu boost is enabled for horizontal scroll. -->
-    <bool name="config_enableCpuBoostForScroller">true</bool>
-    <integer name="scrollboost_timeout_param">0</integer>
-    <integer-array name="scrollboost_param_value">
-        <item>0x40C00000</item>
-        <item>0x00000001</item>
-        <item>0x40800000</item>
-        <item>0x00000708</item>
-        <item>0x40C04000</item>
-        <item>0x00000001</item>
-    </integer-array>
-
-   <!-- Whether cpu boost is enabled for PanelView fling -->
-   <bool name="config_enableCpuBoostForPanelViewFling">false</bool>
-   <integer-array name="panelview_flingboost_param_value">
-       <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
-       <item>0x1</item>        <!-- SCHEDBOOST resource value-->
-       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
-       <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value-->
-   </integer-array>
-
 
     <!-- Values for GPS configuration -->
     <string-array translatable="false" name="config_gpsParameters">

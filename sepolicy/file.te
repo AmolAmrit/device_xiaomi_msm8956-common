@@ -1,6 +1,5 @@
 type proc_touchpanel, fs_type;
 type decrypt_file, file_type, data_file_type;
-type dsp_file, fs_type, contextmount_type;
 type fingerprintd_custom_service, service_manager_type;
 
 # DT2W
