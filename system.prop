@@ -106,6 +106,12 @@ persist.rild.nitz_short_ons_3=
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# QTI Performance
+vendor.iop.enable_uxe=0 
+vendor.iop.enable_prefetch_ofr=0 
+ro.vendor.at_library=libqti-at.so 
+persist.vendor.qti.games.gt.prof=1
+
 # Radio
 DEVICE_PROVISIONED=1
 ril.subscription.types=RUIM

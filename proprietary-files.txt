@@ -505,6 +505,21 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
+# QTI Performance libs - from enchilada PKQ1.180716.001
+-framework/QPerformance.jar|21ab94a7a256ee41b2cedcef49b0febea960416f
+-framework/UxPerformance.jar|04b863479431b267c5b05375382174b1b643af7f
+bin/perfservice|c584edf133dd2c0120365bf30d08034eb2ecc54c
+etc/init/perfservice.rc|67144c3f1800f976cb58463c4370882d2d820947
+etc/perf/whitelistedapps.xml|019e8b114d1befe6f8f476dbc5c8be0d84a91627
+lib/libqti-at.so|71dbc61597cf470d5c64c32875fa7ad738bfbc96
+lib/libqti-perfd-client_system.so|fdc85399bb9a9e5c4bf34e000b2f3567c248e8db
+lib/libqti-util_system.so|083aa59b199edf21150623874adb28b2a315a6cc
+lib/libqti_performance.so|89ad01747faa787ecdcb68841fa9b379bf6a6b90
+lib64/libqti-at.so|1d0ed08faaa4baef919c56c95ef4f22e8456c3aa
+lib64/libqti-perfd-client_system.so|a88a554815a6257d4c4aba4a967e7910368e575b
+lib64/libqti-util_system.so|92f53167fafb35bea4abec8a758b24e00b08db0d
+lib64/libqti_performance.so|792b8a13a85b6d432be41599f03c3455e7414381
+
 # Radio
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
