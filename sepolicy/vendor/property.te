@@ -1,0 +1,2 @@
+type vendor_mpctl_prop, property_type;
+type vendor_scroll_prop, property_type;
