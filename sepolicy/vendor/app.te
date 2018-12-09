@@ -1,0 +1,2 @@
+allow appdomain vendor_iop_prop:file r_file_perms;
+allow appdomain vendor_scroll_prop:file r_file_perms;
