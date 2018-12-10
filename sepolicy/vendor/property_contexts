@@ -7,3 +7,6 @@ vendor.perf.cores_online          u:object_r:vendor_mpctl_prop:s0
 
 ro.vendor.scroll.preobtain.enable       u:object_r:vendor_scroll_prop:s0
 vendor.perf.gestureflingboost.enable    u:object_r:vendor_scroll_prop:s0
+
+vendor.iop.enable_uxe                   u:object_r:vendor_iop_prop:s0
+vendor.iop.enable_prefetch_ofr          u:object_r:vendor_iop_prop:s0
