@@ -147,6 +147,7 @@ net.tcp.2g_init_rwnd=10
 persist.timed.enable=true
 
 # WiFi
+wifi.direct.interface=p2p0
 wifi.interface=wlan0
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
