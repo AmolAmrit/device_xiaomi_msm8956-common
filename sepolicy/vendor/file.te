@@ -12,9 +12,6 @@ type sysfs_dt2w, sysfs_type, fs_type;
 type idc_file, file_type, vendor_file_type;
 type keylayout_file, file_type, vendor_file_type;
 
-# Last kmsg
-type proc_last_kmsg, fs_type, proc_type;
-
 # Loop sysfs files
 type sysfs_loop, fs_type, sysfs_type;
 
