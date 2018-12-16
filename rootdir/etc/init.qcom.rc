@@ -563,7 +563,7 @@ service vendor.dataqti system/vendor/bin/qti
 service vendor.sensors /vendor/bin/sensors.qcom
     class core
     user root
-    group root
+    group root system input
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false
