@@ -5,7 +5,13 @@ allow init proc_kernel_boot_reason:file { read getattr };
 
 # DT2W
 allow init sysfs_dt2w:file { rw_file_perms setattr };
-
 allow init default_android_service:service_manager { add find };
 allow init hal_drm_hwservice:hwservice_manager add;
 allow init hidl_base_hwservice:hwservice_manager add;
+
+# Light
+allow init sysfs_graphics:file setattr;
+
+# MMC host
+allow init sysfs_mmc_host:file { setattr w_file_perms relabelfrom };
+allow init sysfs_mmc_host:dir { relabelfrom };
