@@ -366,6 +366,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_ims
 
+# Strip debug
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1 \
