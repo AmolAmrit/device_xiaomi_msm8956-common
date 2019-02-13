@@ -74,20 +74,16 @@ vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so|867e374575edf2a445ed9fa774f5566f763f0756
 
 
 # Camera
-vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
-vendor/lib/libllvd_smore.so|e2857c4fe9c54e41bfcb52c2adb989230bca7815
-vendor/lib/libllvd_sw_tnr.so|7d41177ad316aa9261cc0dbae8a851fd35ea1e3a
-vendor/lib/libmmcamera_chromaflash_lib.so|d1027d8a537fa58f8bf0dc8e43032ff984d21199
-vendor/lib/libmmcamera_isp_abcc44.so|98a9dcfe8451ede62ba585b727dfedaff351cdf5
-vendor/lib/libmmcamera_llvd.so|e353f8deb237fecd70288537ad82ee0610177f7a 
-vendor/lib/libmmcamera_optizoom_lib.so|5d27d07d3debe479306f3876a87b3307c3b37cec
-vendor/lib/libmmcamera_stillmore_lib.so|1d12690ffddd91689c0b1c670e7c0263b3436f2e
-vendor/lib/libmmcamera_sw_tnr.so|f3b3710452d1e1dc932a0101509ca3f4c97e9503  
-vendor/lib/libmmcamera_trueportrait_lib.so|626c65f2929fb7a8a12f1e07f5fdc0ad9edddf00 
-vendor/lib/libseemore.so|8fc2ae17c7364f789bda71b20a2fba006f9568c8
-vendor/lib/libtrueportrait.so|b8e11c098bd859aae6c535cdb87e3e36f6b1c6ef 
-vendor/lib/liboptizoom.so|1e92993743636c045438f1f15c07c1e835d9ca46
-
+vendor/lib/libchromaflash.so 
+vendor/lib/libllvd_smore.so 
+vendor/lib/libllvd_sw_tnr.so 
+vendor/lib/libmmcamera_isp_abcc44.so 
+vendor/lib/libmmcamera_llvd.so 
+vendor/lib/libmmcamera_sw_tnr.so 
+vendor/lib/liboptizoom.so
+vendor/lib/libseemore.so
+vendor/lib/libtrueportrait.so 
+vendor/lib/libubifocus.so 
 
 # Charger
 vendor/bin/hvdcp_opti
