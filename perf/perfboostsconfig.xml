@@ -22,7 +22,7 @@
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG resource opcode, value-->
         <Config
-            Id="0x00001081" Type="1" Enable="true" Timeout="3000"  Target="msm8952"
+            Id="0x00001081" Type="1" Enable="true" Timeout="2000"  Target="msm8952"
             Resources="0x40C00000, 0x1, 0x40800100, 0x578, 0x40800000, 0x579" />
 
         <!-- SCHEDBOOST resource opcode, value-->
@@ -135,7 +135,7 @@
         <Config
             Id="0x00001089" Enable="true" Timeout="1500" Target="msm8952"
             Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
-                       0x40800100,0xFFF" />
+                       0x40800100, 0xFFF" />
 
         <Config
             Id="0x00001089" Enable="true" Timeout="1500"
