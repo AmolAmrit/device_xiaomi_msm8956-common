@@ -72,9 +72,9 @@ echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
 echo 70 > /sys/module/process_reclaim/parameters/pressure_max
 echo 50 > /sys/module/process_reclaim/parameters/pressure_min
 echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+echo 768 > /sys/module/process_reclaim/parameters/per_swap_size
 echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-echo 100 > /proc/sys/vm/swappiness
+echo 45 > /proc/sys/vm/swappiness
 
 minfree_series=`cat /sys/module/lowmemorykiller/parameters/minfree`
 minfree_1="${minfree_series#*,}" ; rem_minfree_1="${minfree_1%%,*}"
