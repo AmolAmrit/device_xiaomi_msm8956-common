@@ -2346,7 +2346,7 @@ void QCameraMuxer::composeMpo(cam_compose_jpeg_info_t* main_Jpeg,
                     mpo_compose_info.primary_image.buf_vaddr,
                     mpo_compose_info.primary_image.buf_filled_len);
             fchmod(file_fd_main, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-            CDBG("%s: written number of bytes for main Image %ld\n",
+            CDBG("%s: written number of bytes for main Image %zd\n",
                     __func__, written_len);
             close(file_fd_main);
         }
@@ -2363,7 +2363,7 @@ void QCameraMuxer::composeMpo(cam_compose_jpeg_info_t* main_Jpeg,
                     mpo_compose_info.aux_images[0].buf_vaddr,
                     mpo_compose_info.aux_images[0].buf_filled_len);
             fchmod(file_fd_aux, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-            CDBG("%s: written number of bytes for Aux Image %ld\n",
+            CDBG("%s: written number of bytes for Aux Image %zd\n",
                     __func__, written_len);
             close(file_fd_aux);
         }
@@ -2391,7 +2391,7 @@ void QCameraMuxer::composeMpo(cam_compose_jpeg_info_t* main_Jpeg,
                     m_pRelCamMpoJpeg->data,
                     m_pRelCamMpoJpeg->size);
             fchmod(file_fd_mpo, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-            CDBG("%s: written number of bytes for MPO Image %ld\n",
+            CDBG("%s: written number of bytes for MPO Image %zd\n",
                     __func__, written_len);
             close(file_fd_mpo);
         }
