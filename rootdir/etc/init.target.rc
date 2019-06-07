@@ -83,8 +83,7 @@ service vendor.thermal-engine /system/vendor/bin/thermal-engine
 
 on boot
     start vendor.rmt_storage
-    write /proc/sys/kernel/sched_boost 1
-
+   
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
@@ -159,3 +158,4 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.powerctl=*
     stop vendor.per_proxy
+
