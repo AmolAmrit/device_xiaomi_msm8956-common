@@ -222,6 +222,9 @@ vendor/lib64/lib-sec-disp.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
+# Energy awareness - from smartron (smartron-rimo02a-8.0.0-T5524INDURC-475)
+vendor/bin/energy-awareness|8ec3f96a118c37a2dda0d70122ff075861641ccc
+
 # Firmwares
 etc/firmware/DE.o.msm8952|a7c25709e65409e559b8a6849646bca027c4f40e
 etc/firmware/DE.o.msm8976|676a46b8d21ac238fa12fbccdead6521dce2926c

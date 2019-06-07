@@ -159,3 +159,9 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.powerctl=*
     stop vendor.per_proxy
 
+# CPU energy defaults per frequency
+service vendor.energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
