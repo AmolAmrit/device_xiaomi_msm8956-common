@@ -85,6 +85,9 @@ vendor/lib/libseemore.so
 vendor/lib/libtrueportrait.so 
 vendor/lib/libubifocus.so 
 
+# Core ctl
+lib/modules/core_ctl.ko
+
 # Charger
 vendor/bin/hvdcp_opti
 
