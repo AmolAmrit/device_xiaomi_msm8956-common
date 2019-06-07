@@ -202,6 +202,17 @@ echo 1 > /sys/module/lpm_levels/parameters/lpm_prediction
 # Enable Low power modes
 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
+# Remove interaction lock when idle
+echo 100 > /sys/devices/virtual/graphics/fb0/idle_time
+
+if [ `cat /sys/devices/soc0/revision` == "1.0" ]; then
+# Disable l2-pc and l2-gdhs low power modes
+    echo N > /sys/module/lpm_levels/system/a53/a53-l2-gdhs/idle_enabled
+    echo N > /sys/module/lpm_levels/system/a72/a72-l2-gdhs/idle_enabled
+    echo N > /sys/module/lpm_levels/system/a53/a53-l2-pc/idle_enabled
+    echo N > /sys/module/lpm_levels/system/a72/a72-l2-pc/idle_enabled
+fi
+
 # Disable L2 GDHS on 8976
 echo N > /sys/module/lpm_levels/system/a53/a53-l2-gdhs/idle_enabled
 echo N > /sys/module/lpm_levels/system/a72/a72-l2-gdhs/idle_enabled
