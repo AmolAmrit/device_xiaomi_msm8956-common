@@ -43,6 +43,10 @@ media.camera.ts.monotonic=1
 persist.camera.HAL3.enabled=1
 persist.vendor.qti.telephony.vt_cam_interface=1
 
+# Core_ctl
+ro.vendor.core_ctl_min_cpu=1
+ro.vendor.core_ctl_max_cpu=2
+
 # AUX Camera app
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
