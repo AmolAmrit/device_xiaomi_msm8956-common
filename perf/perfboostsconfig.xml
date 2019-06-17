@@ -139,6 +139,14 @@
         <Config
             Id="0x00001080" Type="5" Enable="true" Timeout="2500" Target="msm8976"
             Resources="0x40800000, 0x459,0x40C00000, 0x2" />
+
+    <!--Pre-Fling boost-->	
+        <!-- SCHEDBOOST resource opcode, value-->
+        <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->	
+        <!-- Type="4", Pre-Fling boost -->	
+        <Config	
+            Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="msm8952"	
+            Resources="0x40C00000, 0x2, 0x40800000, 0x446" />
   
     <!--Drag boost-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
@@ -160,38 +168,38 @@
     <!--PackageInstall boost-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
-        <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
-        <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
         <!-- Type="", Package Install boost -->
 
         <Config
             Id="0x00001088" Enable="true" Target="msm8952"
-            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40804100, 0x579, 0x40800000, 0x519, 0x40800100, 0x519" />
+            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40800000, 0x519" />
                        
         <Config
             Id="0x00001088" Enable="true" Target="msm8956"
-            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40804100, 0x579, 0x40800000, 0x519, 0x40800100, 0x519" />
+            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40800000, 0x519" />
                        
         <Config
             Id="0x00001088" Enable="true" Target="msm8976"
-            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40804100, 0x579, 0x40800000, 0x519, 0x40800100, 0x519" />
+            Resources="0x40C00000, 0x1, 0x40804000, 0x70C, 0x40800000, 0x519" />
 
     <!--Rotation latency boost-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
-        <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
-        <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
         <!-- Type="", Rotation latency boost -->
         <Config
             Id="0x00001089" Enable="true" Timeout="1500" Target="msm8952"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
-                       0x40800100, 0xFFF" />
+            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40800000, 0xFFF" />        
 
         <Config
-            Id="0x00001089" Enable="true" Timeout="1500"
-            Resources="0x40C00000, 0x1, 0x40804100, 0xFFF, 0x40800100, 0xFFF" />
+            Id="0x00001089" Enable="true" Timeout="1500" Target="msm8956"
+            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40800100, 0xFFF" />
+        
+        <Config
+            Id="0x00001089" Enable="true" Timeout="1500" Target="msm8976"
+            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40800100, 0xFFF" />
+
 
     <!--Rotation animation boost-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
