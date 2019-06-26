@@ -93,9 +93,9 @@ need to be added just before the end of it's major group. -->
         <!-- For following minors node paths might change basing on GovInstanceType and
         Supported field might change basing on the type of CpufreqGov.-->
         <Minor OpcodeValue="0x0" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay" />
-        <Minor OpcodeValue="0x1" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boost" Supported="no" />
-        <Minor OpcodeValue="0x2" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse" Supported="no" />
-        <Minor OpcodeValue="0x3" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration" Supported="no" />
+        <Minor OpcodeValue="0x1" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boost" />
+        <Minor OpcodeValue="0x2" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse" /> 
+        <Minor OpcodeValue="0x3" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration" />
         <Minor OpcodeValue="0x4" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load" />
         <Minor OpcodeValue="0x5" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq" />
         <Minor OpcodeValue="0x6" Node="/sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy" />
