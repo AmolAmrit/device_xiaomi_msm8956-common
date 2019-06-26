@@ -246,9 +246,7 @@ echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
 echo 50000 > /proc/sys/kernel/sched_freq_inc_notify
 echo 50000 > /proc/sys/kernel/sched_freq_dec_notify
 
-# Enable core control
-insmod /system/lib/modules/core_ctl.ko
-
+# Core control
 echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
 echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
 echo 68 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
