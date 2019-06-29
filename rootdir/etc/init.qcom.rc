@@ -244,6 +244,10 @@ on boot
 
     # Arch Power 
     write /sys/kernel/sched/arch_power 1
+  
+    # KSM Settings
+    write /sys/kernel/mm/ksm/deferred_timer 1
+    write /sys/kernel/mm/ksm/run 1
 
 on post-fs
     start qseecomd
