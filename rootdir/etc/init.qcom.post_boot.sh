@@ -147,27 +147,6 @@ do
     echo 40 > $gpu_bimc_io_percent
 done
 
-# Disable thermal & BCL core_control to update interactive gov settings
-echo 0 > /sys/module/msm_thermal/core_control/enabled
-for mode in /sys/devices/soc.0/qcom,bcl.*/mode
-do
-    echo -n disable > $mode
-done
-for hotplug_mask in /sys/devices/soc.0/qcom,bcl.*/hotplug_mask
-do
-    bcl_hotplug_mask=`cat $hotplug_mask`
-    echo 0 > $hotplug_mask
-done
-for hotplug_soc_mask in /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask
-do
-    bcl_soc_hotplug_mask=`cat $hotplug_soc_mask`
-    echo 0 > $hotplug_soc_mask
-done
-for mode in /sys/devices/soc.0/qcom,bcl.*/mode
-do
-    echo -n enable > $mode
-done
-
 # enable governor for power cluster
 echo 1 > /sys/devices/system/cpu/cpu0/online
 echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -245,35 +224,6 @@ echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load
 echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
 echo 50000 > /proc/sys/kernel/sched_freq_inc_notify
 echo 50000 > /proc/sys/kernel/sched_freq_dec_notify
-
-# Core control
-echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/max_cpus
-echo 68 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
-echo 40 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
-echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
-echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
-
-# Re-enable thermal & BCL core_control now
-echo 1 > /sys/module/msm_thermal/core_control/enabled
-for mode in /sys/devices/soc.0/qcom,bcl.*/mode
-do
-    echo -n disable > $mode
-done
-for hotplug_mask in /sys/devices/soc.0/qcom,bcl.*/hotplug_mask
-do
-    bcl_hotplug_mask=`cat $hotplug_mask`
-    echo 48 > $hotplug_mask
-done
-for hotplug_soc_mask in /sys/devices/soc.0/qcom,bcl.*/hotplug_soc_mask
-do
-    bcl_soc_hotplug_mask=`cat $hotplug_soc_mask`
-    echo 32 > $hotplug_soc_mask
-done
-for mode in /sys/devices/soc.0/qcom,bcl.*/mode
-do
-    echo -n enable > $mode
-done
 
 # Enable timer migration to little cluster
 echo 1 > /proc/sys/kernel/power_aware_timer_migration
