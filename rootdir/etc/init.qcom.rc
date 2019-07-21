@@ -451,7 +451,7 @@ on post-fs-data
     chmod 2770 /data/vendor/swap
 
     # set aggressive read ahead during boot up
-    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
 
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
