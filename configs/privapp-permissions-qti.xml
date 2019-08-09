@@ -149,4 +149,14 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.READ_BLOCKED_NUMBERS" />
         <permission name="android.permission.VIBRATE" />
     </privapp-permissions>
+
+    <privapp-permissions package="com.android.launcher3">
+        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.qualcomm.location">
+        <permission name="android.permission.CONTROL_LOCATION_UPDATES"/>
+    </privapp-permissions>
 </permissions>
