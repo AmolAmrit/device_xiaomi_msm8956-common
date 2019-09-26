@@ -1,7 +1,12 @@
-allow system_server proc_touchpanel:dir search;
-allow system_server proc_touchpanel:file rw_file_perms;
 allow system_server default_android_hwservice:hwservice_manager find;
 allow system_server default_android_service:service_manager add;
+
+# touchpanel
+allow system_server proc_touchpanel:dir search;
+allow system_server proc_touchpanel:file rw_file_perms;
+
+# sdcardfs
+allow system_server sdcardfs:file read;
 
 # DT2W
 allow system_server sysfs_dt2w:dir search;
@@ -16,3 +21,6 @@ allow system_server proc_last_kmsg:file r_file_perms;
 
 # Allow Gesture based boost from System Server
 allow system_server vendor_scroll_prop:file r_file_perms;
+
+# vfat
+allow system_server vfat:dir { open read };

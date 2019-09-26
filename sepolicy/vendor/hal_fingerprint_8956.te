@@ -13,6 +13,7 @@ allow hal_fingerprint_8956 fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_8956 fpc_data_file:sock_file create_file_perms;
 allow hal_fingerprint_8956 fpc_sysfs:file rw_file_perms;
 allow hal_fingerprint_8956 storage_file:dir search;
+allow hal_fingerprint_8956 storage_file:lnk_file read;
 allow hal_fingerprint_8956 sysfs_vadc_dev:dir search;
 allow hal_fingerprint_8956 tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_8956 uhid_device:chr_file rw_file_perms;

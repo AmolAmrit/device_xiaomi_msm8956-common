@@ -1,5 +1,8 @@
 allow priv_app device:dir r_dir_perms;
 
+# Memory Track
+allow priv_app hal_memtrack_hwservice:hwservice_manager find;
+
 # Loop
 allow priv_app sysfs_loop:file { read open };
 
