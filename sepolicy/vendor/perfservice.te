@@ -23,7 +23,8 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-hal_client_domain(perfservice, hal_perf)
 
+hal_client_domain(perfservice, hal_perf)
 hal_client_domain(perfservice, hal_iop)
 allow perfservice vendor_iop_prop:file r_file_perms;
+allow perfservice default_android_service:service_manager add;
