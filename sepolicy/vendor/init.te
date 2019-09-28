@@ -14,6 +14,12 @@ allow init sysfs_graphics:file setattr;
 allow init sysfs_mmc_host:file { setattr w_file_perms relabelfrom };
 allow init sysfs_mmc_host:dir { relabelfrom };
 
+# Vendor
+allow init vendor_file:dir relabelfrom;
+allow init vendor_file:file relabelfrom;
+
 allow init btnvtool_exec:file execute_no_trans;
+
+# System
 allow init system_file:dir relabelfrom;
 allow init system_file:file relabelfrom;
