@@ -24,3 +24,6 @@ allow system_server vendor_scroll_prop:file r_file_perms;
 
 # vfat
 allow system_server vfat:dir { open read };
+
+# adb
+allow system_server adb_data_file:file { getattr read };

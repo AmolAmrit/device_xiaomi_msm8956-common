@@ -17,6 +17,7 @@ allow hal_fingerprint_8956 storage_file:lnk_file read;
 allow hal_fingerprint_8956 sysfs_vadc_dev:dir search;
 allow hal_fingerprint_8956 tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_8956 uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_8956 keystore_service:service_manager find;
 
 binder_use(hal_fingerprint_8956)
 

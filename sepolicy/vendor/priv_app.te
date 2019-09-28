@@ -1,3 +1,4 @@
+# Device
 allow priv_app device:dir r_dir_perms;
 
 # Memory Track
@@ -11,5 +12,8 @@ allow priv_app proc_pci_devices:file r_file_perms;
 
 # Wcnss
 allow priv_app sysfs_wcnss:file { read open };
+
+# System app
+allow priv_app system_app_data_file:dir getattr;
 
 dontaudit priv_app proc_interrupts:file open;

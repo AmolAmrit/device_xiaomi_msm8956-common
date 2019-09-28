@@ -1,2 +1,7 @@
 allow radio system_app_data_file:dir getattr;
 allow radio qcom_ims_prop:file read;
+allow radio qcom_ims_prop:file open;
+allow radio qcom_ims_prop:file write;
+
+# adb
+allow radio adb_data_file:file getattr;
