@@ -233,6 +233,9 @@ echo 130 > /proc/sys/kernel/sched_grp_upmigrate
 echo 110 > /proc/sys/kernel/sched_grp_downmigrate
 echo   1 > /proc/sys/kernel/sched_enable_thread_grouping
 
+# Enable Fingerprint Boost
+echo 1 > /sys/kernel/fp_boost/enabled
+
 # Parse misc partition path and set property
 misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
 real_path=${misc_link##*>}
