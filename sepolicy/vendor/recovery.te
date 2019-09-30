@@ -1,1 +1,2 @@
 allow recovery default_prop:property_service set;
+allow recovery system_radio_prop:property_service set;
