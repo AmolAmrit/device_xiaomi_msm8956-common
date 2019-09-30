@@ -1,1 +1,4 @@
 allow hal_audio_default sysfs:dir { read open };
+
+# adb
+allow hal_audio_default adb_data_file:file read;

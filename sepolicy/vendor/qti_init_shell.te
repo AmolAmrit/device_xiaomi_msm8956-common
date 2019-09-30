@@ -9,9 +9,9 @@ allow qti_init_shell qmuxd_socket:sock_file create_file_perms;
 allow qti_init_shell sysfs:file { w_file_perms };
 allow qti_init_shell proc_kernel_printk:file rw_file_perms;
 allow qti_init_shell proc_kernel_sched_boost:file { open write };
-allow qti_init_shell proc_dirty:file write;
-allow qti_init_shell proc_dirty_ratio:file write;
-allow qti_init_shell proc_kernel_sched:file write;
-allow qti_init_shell proc_overcommit_memory:file write;
-allow qti_init_shell proc_page_cluster:file write;
+allow qti_init_shell proc_dirty:file { open write };
+allow qti_init_shell proc_dirty_ratio:file { open write };
+allow qti_init_shell proc_kernel_sched:file { open write };
+allow qti_init_shell proc_overcommit_memory:file { open write };
+allow qti_init_shell proc_page_cluster:file { open write };
 set_prop(qti_init_shell, vendor_mpctl_prop)

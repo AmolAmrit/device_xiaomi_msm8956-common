@@ -27,3 +27,7 @@ allow system_server vfat:dir { open read };
 
 # adb
 allow system_server adb_data_file:file { getattr read };
+allow system_server adb_data_file:dir getattr;
+
+# Android Services
+allow system_server default_android_service:service_manager find;
