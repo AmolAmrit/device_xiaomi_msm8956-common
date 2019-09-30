@@ -16,4 +16,7 @@ allow priv_app sysfs_wcnss:file { read open };
 # System app
 allow priv_app system_app_data_file:dir getattr;
 
+# Android Services
+allow priv_app default_android_service:service_manager find;
+
 dontaudit priv_app proc_interrupts:file open;
