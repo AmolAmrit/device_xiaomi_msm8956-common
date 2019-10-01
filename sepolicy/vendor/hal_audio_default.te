@@ -1,4 +1,5 @@
 allow hal_audio_default sysfs:dir { read open };
+allow hal_audio_default property_socket:sock_file write;
 
 # adb
 allow hal_audio_default adb_data_file:file read;
