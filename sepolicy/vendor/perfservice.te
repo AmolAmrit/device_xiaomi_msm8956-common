@@ -27,4 +27,4 @@
 hal_client_domain(perfservice, hal_perf)
 hal_client_domain(perfservice, hal_iop)
 allow perfservice vendor_iop_prop:file r_file_perms;
-allow perfservice default_android_service:service_manager add;
+allow perfservice default_android_service:service_manager { add find };

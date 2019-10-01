@@ -1,5 +1,6 @@
 allow zygote untrusted_app:process ptrace;
 allow zygote system_file:dir { add_name write };
+allow zygote system_file:file create;
 
 # adb
 allow zygote adb_data_file:file read;
