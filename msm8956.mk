@@ -334,8 +334,8 @@ PRODUCT_PACKAGES += \
 
 # QTI performance
  PRODUCT_BOOT_JARS += \
-     QPerformance \
-     UxPerformance
+#     QPerformance \
+#     UxPerformance
 
 # Ramdisk
 PRODUCT_PACKAGES += \
