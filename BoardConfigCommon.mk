@@ -221,6 +221,7 @@ TARGET_LD_SHIM_LIBS := \
 # SELinux
 #include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-minimal
 
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
