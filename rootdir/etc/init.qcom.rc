@@ -399,12 +399,11 @@ on post-fs-data
     mkdir /data/nfc/param 0770 nfc nfc
 
     # Sensor
-    chmod 0775 /persist/sensors
+    mkdir /persist/sensors 0775 root system
+    chown root system /persist/sensors/sensors_settings
     chmod 0664 /persist/sensors/sensors_settings
-    chown system root /persist/sensors/sensors_settings
-    mkdir /persist/sensors/registry/registry
-    mkdir /data/misc/sensors
-    chmod 0775 /data/misc/sensors
+    chown root system /persist/sensors/sns.reg
+    chmod 0664 /persist/sensors/sns.reg
 
     #Create IOP deamon related dirs
     mkdir /data/vendor/iop 0770 root system
@@ -558,8 +557,11 @@ service vendor.dataqti system/vendor/bin/qti
 
 service vendor.sensors /vendor/bin/sensors.qcom
     class core
-    user root
-    group root system input
+    user system
+    group system input
+    # Grants the ability for this daemon to bind IPC router ports so it can
+    # register QMI services
+    capabilities NET_BIND_SERVICE
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false

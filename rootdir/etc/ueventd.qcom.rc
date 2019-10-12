@@ -301,3 +301,6 @@
 # sys-fs display
 /sys/class/graphics/fb*     dynamic_fps              0664    system  graphics
 
+# /dev/sensors only supports an ioctl to get the current SLPI timestamp
+# allow the sensors daemon to perform this as non-root
+/dev/sensors              0660   root       system
