@@ -42,10 +42,6 @@ write_headers "kenzo hydrogen"
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
 
-cat << EOF >> "${ANDROIDMK}"
-\$(shell mkdir -p \$(TARGET_OUT_VENDOR)/lib/egl && pushd \$(TARGET_OUT_VENDOR)/lib > /dev/null && ln -s egl/libGLESv2_adreno.so libGLESv2_adreno.so && popd > /dev/null)
-EOF
-
 # We are done!
 write_footers
 
