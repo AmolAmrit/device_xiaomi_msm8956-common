@@ -333,9 +333,9 @@ PRODUCT_PACKAGES += \
     libxml2
 
 # QTI performance
- PRODUCT_BOOT_JARS += \
-     QPerformance \
-     UxPerformance
+ #PRODUCT_BOOT_JARS += \
+     #QPerformance \
+     #UxPerformance
 
 # Ramdisk
 PRODUCT_PACKAGES += \
