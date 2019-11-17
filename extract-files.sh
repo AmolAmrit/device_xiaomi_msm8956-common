@@ -69,5 +69,8 @@ patchelf --replace-needed android.frameworks.sensorservice@1.0.so android.framew
 patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $COMMON_BLOB_ROOT/lib64/vendor.qti.gnss@1.0.so
 patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $COMMON_BLOB_ROOT/vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 patchelf --replace-needed libbase.so libbase-v28.so $COMMON_BLOB_ROOT/vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+patchelf --replace-needed "libbase.so" "libbase-hax.so" $COMMON_BLOB_ROOT/vendor/lib/lib-uceservice.so
+patchelf --replace-needed "libbase.so" "libbase-hax.so" $COMMON_BLOB_ROOT/vendor/lib64/lib-uceservice.so
+patchelf --replace-needed "libbase.so" "libbase-hax.so" $COMMON_BLOB_ROOT/vendor/bin/imsrcsd
 
 "$MY_DIR"/setup-makefiles.sh
