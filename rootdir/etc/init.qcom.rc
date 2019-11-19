@@ -34,6 +34,8 @@ on early-init
     chmod 0755 /sys/kernel/debug
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
+    # Enable sched boost
+    write /proc/sys/kernel/sched_boost 1
   
 on init
     # Set permissions for persist partition
