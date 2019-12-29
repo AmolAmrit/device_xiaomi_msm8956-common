@@ -84,7 +84,7 @@ service vendor.thermal-engine /system/vendor/bin/thermal-engine
 on boot
     start vendor.rmt_storage
    
-service wcnss-service /system/bin/wcnss_service
+service vendor.wcnss-service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
