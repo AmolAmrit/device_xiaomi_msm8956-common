@@ -1,1 +1,2 @@
 allow cnd system_wpa_socket:sock_file unlink;
+allow cnd default_android_hwservice:hwservice_manager add;

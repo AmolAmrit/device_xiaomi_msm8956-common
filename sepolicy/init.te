@@ -2,3 +2,7 @@ allow init debugfs:file write;
 
 # DT2W
 allow init sysfs_dt2w:file { rw_file_perms setattr };
+
+allow init default_android_service:service_manager { add find };
+allow init hal_drm_hwservice:hwservice_manager add;
+allow init hidl_base_hwservice:hwservice_manager add;
