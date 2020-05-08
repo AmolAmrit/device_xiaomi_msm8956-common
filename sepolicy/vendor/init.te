@@ -26,3 +26,6 @@ allow init btnvtool_exec:file execute_no_trans;
 # System
 allow init system_file:dir relabelfrom;
 allow init system_file:file relabelfrom;
+
+# Charger
+allow init rootfs:file mounton
