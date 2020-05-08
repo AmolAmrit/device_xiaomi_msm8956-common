@@ -1,6 +1,7 @@
 r_dir_file(mm-qcamerad, sysfs_graphics) 
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad adb_data_file:file read;
+allow mm-qcamerad sysfs:file read;
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
 
