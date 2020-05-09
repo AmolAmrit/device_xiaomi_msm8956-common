@@ -95,4 +95,52 @@
         <item>"0,4,2,0,-2,-2,4"</item>
         <item>"2,0,0,-2,-4,0,0"</item>
     </string-array>
+
+   <!-- Kcal -->
+    <array name="preset_enteries">
+        <item>@string/preset_default</item>
+        <item>@string/preset_version_1</item>
+        <item>@string/preset_version_2</item>
+        <item>@string/preset_version_3</item>
+        <item>@string/preset_triluminous</item>
+        <item>@string/preset_deep_black_white</item>
+        <item>@string/preset_deep_natural</item>
+        <item>@string/preset_cool_amoled</item>
+        <item>@string/preset_extreme_amoled</item>
+        <item>@string/preset_warm_amoled</item>
+        <item>@string/preset_hybrid_mamba</item>
+        <item>@string/preset_hide_ge1</item>
+        <item>@string/preset_hide_ge2</item>
+    </array>
+
+    <array name="preset_values">
+        <!-- R, G, B, minimum, saturation, value, contrast, hue -->
+        <item>255 255 255 35 35 127 127 0</item>
+        <item>237 237 237 35 40 127 127 0</item>
+        <item>250 250 235 35 27 112 132 1520</item>
+        <item>240 240 240 35 33 127 127 0</item>
+        <item>255 250 251 35 66 136 132 1526</item>
+        <item>250 250 255 35 60 117 136 0</item>
+        <item>250 250 255 35 33 117 136 0</item>
+        <item>236 248 255 35 50 123 130 0</item>
+        <item>255 255 255 35 65 114 136 0</item>
+        <item>253 246 243 35 50 123 130 0</item>
+        <item>226 215 255 35 40 119 132 10</item>
+        <item>199 199 210 35 35 144 144 0</item>
+        <item>230 230 244 35 35 144 144 0</item>
+    </array>
+  
+     <!--Spectrum -->
+     <string-array name="spectrum_profiles">
+        <item>@string/spectrum_balance</item>
+        <item>@string/spectrum_performance</item>
+        <item>@string/spectrum_battery</item>
+        <item>@string/spectrum_gaming</item>
+    </string-array>
+    <string-array name="spectrum_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>    
 </resources>
