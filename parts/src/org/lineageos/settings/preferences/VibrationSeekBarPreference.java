@@ -1,4 +1,4 @@
-package org.lineageos.settings.device.preferences;
+package org.lineageos.settings.preferences;
 
 import android.content.Context;
 import android.os.VibrationEffect;

@@ -1,30 +1,19 @@
-/*
- * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019-2020 mhkjahromi <m.h.k.jahromi@gmail.com>
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License
- */
-
-package org.lineageos.settings.device;
+package org.lineageos.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
+import android.util.Log;
+import org.lineageos.settings.kcal.Utils;
 
-import org.lineageos.settings.device.kcal.Utils;
+import org.lineageos.settings.dirac.DiracUtils;
+import org.lineageos.settings.doze.DozeUtils;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
+
+    private static final boolean DEBUG = false;
+    private static final String TAG = "XiaomiParts";
 
     public void onReceive(Context context, Intent intent) {
 
@@ -54,25 +43,35 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         }
 
+        FileUtils.setValue(DeviceSettings.QC_LIMIT_PATH, Settings.Secure.getInt(
+        context.getContentResolver(), DeviceSettings.PREF_QC_LIMIT, 2000) / 2000.0 * (DeviceSettings.MAX_QC - DeviceSettings.MIN_QC) + DeviceSettings.MIN_QC);
+
+        int gain = Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_HEADPHONE_GAIN, 0);
+        FileUtils.setValue(DeviceSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
+        FileUtils.setValue(DeviceSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_MICROPHONE_GAIN, 3));
+
         FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS_1, 100));
         FileUtils.setValue(DeviceSettings.TORCH_2_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS_2, 100));
         FileUtils.setValue(DeviceSettings.VIBRATION_STRENGTH_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);
-        FileUtils.setValue(DeviceSettings.SWAP_BUTTONS_PATH, Settings.Secure.getInt(
-                context.getContentResolver(), DeviceSettings.PREF_SWAP_BUTTONS, 0));
         FileUtils.setValue(DeviceSettings.FPWAKEUP_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_FPWAKEUP, 0));
-        FileUtils.setValue(DeviceSettings.FPHOME_PATH, Settings.Secure.getInt(
-                context.getContentResolver(), DeviceSettings.PREF_FPHOME, 0));
-        FileUtils.setValue(DeviceSettings.FPPOCKET_PATH, Settings.Secure.getInt(
-                context.getContentResolver(), DeviceSettings.PREF_FPPOCKET, 0));
-        FileUtils.setValue(DeviceSettings.DT2W_PATH, Settings.Secure.getInt(
-                context.getContentResolver(), DeviceSettings.PREF_DT2W, 0));
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_USB_FASTCHARGE, 0));
+
+
+            if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)){
+            if (DEBUG) Log.d(TAG, "Starting Doze service");
+            DozeUtils.startService(context);
+        }
+
+        new DiracUtils(context).onBootCompleted();
+
     }
 }
