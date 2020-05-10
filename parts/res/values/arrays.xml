@@ -129,4 +129,18 @@
         <item>199 199 210 35 35 144 144 0</item>
         <item>230 230 244 35 35 144 144 0</item>
     </array>
+  
+     <!--Spectrum -->
+     <string-array name="spectrum_profiles">
+        <item>@string/spectrum_balance</item>
+        <item>@string/spectrum_performance</item>
+        <item>@string/spectrum_battery</item>
+        <item>@string/spectrum_gaming</item>
+    </string-array>
+    <string-array name="spectrum_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>    
 </resources>

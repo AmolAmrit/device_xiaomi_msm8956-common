@@ -16,16 +16,29 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory
-        android:key="buttons"
-        android:title="@string/buttons_title">
+   <PreferenceCategory
+        android:key="usb"
+        android:title="@string/usb_fastcharge_title">
 
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
             android:defaultValue="false"
-            android:key="swapbuttons"
-            android:summary="@string/swapbuttons_summary"
-            android:title="@string/swapbuttons_title"
-            android:icon="@drawable/ic_swap" />
+            android:key="usbfastcharge"
+            android:summary="@string/fastcharge_summary"
+            android:title="@string/fastcharge_title"
+            android:icon="@drawable/ic_usb" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qc"
+        android:title="@string/usb_fastcharge_title">
+
+        <org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference
+            android:defaultValue="2000"
+            android:key="qc_limit"
+            android:max="2500"
+            app:min="1000"
+            android:title="@string/qc_limit_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -38,58 +51,28 @@
             android:summary="@string/fp_wakeup_summary"
             android:title="@string/fp_wakeup_title"
             android:icon="@drawable/ic_fpwakeup" />
-
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="fphome"
-            android:summary="@string/fp_home_summary"
-            android:title="@string/fp_home_title"
-            android:icon="@drawable/ic_fphome" />
-
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="fppocket"
-            android:summary="@string/fp_pocketmode_summary"
-            android:title="@string/fp_pocketmode_title"
-            android:icon="@drawable/ic_fppocket" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="gestures"
-        android:title="@string/gestures_title">
-
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="dt2w"
-            android:summary="@string/dt2w_summary"
-            android:title="@string/dt2w_title"
-            android:icon="@drawable/ic_dt2w" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="usb"
-        android:title="@string/usb_fastcharge_title">
-
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="usbfastcharge"
-            android:summary="@string/fastcharge_summary"
-            android:title="@string/fastcharge_title"
-            android:icon="@drawable/ic_usb" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
+   <PreferenceCategory
         android:key="torch"
         android:title="@string/torch_title">
 
         <org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="100"
-            android:key="torch_brightness"
+            android:key="yellow_led"
             android:max="200"
             app:min="1"
-            android:title="@string/torch_brightness_title" />
+            android:icon="@drawable/ic_torch"
+            android:title="@string/yellow_torch_brightness_title_head" />
+        <org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference
+            android:defaultValue="100"
+            android:key="white_led"
+            android:max="200"
+            app:min="1"
+            android:icon="@drawable/ic_torch"
+            android:title="@string/white_torch_brightness_title_head" />
 
-    </PreferenceCategory>
+    </PreferenceCategory> 
 
     <PreferenceCategory
         android:key="vibration"
@@ -119,19 +102,6 @@
                 android:targetClass="org.lineageos.settings.kcal.KCalSettingsActivity"
                 android:targetPackage="org.lineageos.settings.kcal" />
         </Preference>
-
-        <Preference
-            android:key="device_doze"
-            android:persistent="false"
-            android:summary="@string/advanced_doze_summary"
-            android:title="@string/ambient_display_xiaomi"
-            android:icon="@drawable/ic_doze">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"
-                android:targetPackage="org.lineageos.settings.doze" />
-        </Preference>
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="spectrum_profile"
