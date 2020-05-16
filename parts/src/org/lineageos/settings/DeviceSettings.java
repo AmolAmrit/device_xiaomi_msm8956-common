@@ -81,10 +81,12 @@ public class DeviceSettings extends PreferenceFragment implements
         TorchBrightness2.setEnabled(FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
         TorchBrightness2.setOnPreferenceChangeListener(this);
 
-        mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        SecureSettingCustomSeekBarPreference mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        mHeadphoneGain.setEnabled(FileUtils.fileWritable(HEADPHONE_GAIN_PATH));
         mHeadphoneGain.setOnPreferenceChangeListener(this);
 
-        mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
+        SecureSettingCustomSeekBarPreference mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
+        mMicrophoneGain.setEnabled(FileUtils.fileWritable(MICROPHONE_GAIN_PATH));
         mMicrophoneGain.setOnPreferenceChangeListener(this);
 
         if (FileUtils.fileWritable(QC_LIMIT_PATH)) {
