@@ -9,6 +9,8 @@ allow vendor_init {
 allow vendor_init media_rw_data_file:file getattr;
 allow vendor_init rootfs:file create_file_perms;
 allow vendor_init rootfs:dir  create_dir_perms;
+allow vendor_init system_file:file relabelfrom;
+allow vendor_init media_rw_data_file:file relabelfrom;
 
 # Firmware
 allow vendor_init firmware_file:file create_file_perms;
